@@ -1,0 +1,26 @@
+/**
+ * Twitter Bootstrap Framework - http://getbootstrap.com/
+ * License: Bootstrap is released under the Apache 2 license ( https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+/**
+ * Font Open Sans - http://www.google.com/fonts/specimen/Open+Sans
+ * License: Apache License version 2.0. (http://fontawesome.io/license/)
+ * Copyright: Steve Matteson, https://profiles.google.com/107777320916704234605/about
+ */
+ 
+ /**
+ * Font Awesome - http://fortawesome.github.io/Font-Awesome/
+ * License: Font Awesome is fully open source and is GPL compatible (http://fortawesome.github.io/Font-Awesome/license/)
+ */
+   
+/**
+ * WordPress 3.4 Theme Customizer (theme-customizer.js)
+ * License: GPLv2 (or later) (http://wordpress.org/about/gpl/)
+*/
+
+/**
+ * HTML5 Shiv - https://code.google.com/p/html5shiv/
+ * License: Dual licensed under the MIT or GPL Version 2 licenses
+ * Copyright: Alexander Farkas, http://protofunc.com/
+ */
