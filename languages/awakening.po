@@ -1,0 +1,815 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Openstrap\n"
+"POT-Creation-Date: 2013-08-11 16:45+0530\n"
+"PO-Revision-Date: 2013-08-11 16:46+0530\n"
+"Last-Translator: \n"
+"Language-Team: Opencodez Team\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:17
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr ""
+
+#: 404.php:21
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: archive.php:30
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: archive.php:32
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: archive.php:34
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: archive.php:36 inc/widgets/openstrap-archive-widget.php:31
+msgid "Archives"
+msgstr ""
+
+#: author-box.php:20 author.php:52
+#, php-format
+msgid "About %s"
+msgstr ""
+
+#: author-box.php:24
+#, php-format
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: author.php:32
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: category.php:21
+#, php-format
+msgid "Category Archives: %s"
+msgstr ""
+
+#: comments.php:40
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:42
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:51
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:13 layouts/content-sidebar-sidebar.php:32
+#: layouts/content-sidebar.php:30 layouts/full-width.php:30
+#: layouts/sidebar-content-sidebar.php:33 layouts/sidebar-content.php:32
+#: layouts/sidebar-sidebar-content.php:35
+msgid "Nothing Found"
+msgstr ""
+
+#: content-none.php:17 layouts/content-sidebar-sidebar.php:36
+#: layouts/content-sidebar.php:34 layouts/full-width.php:34
+#: layouts/sidebar-content-sidebar.php:37 layouts/sidebar-content.php:36
+#: layouts/sidebar-sidebar-content.php:39
+msgid ""
+"Apologies, but no results were found. Perhaps searching will help find a "
+"related post."
+msgstr ""
+
+#: content-page.php:18
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:21 functions.php:423
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:16 content.php:15
+msgid "Featured post"
+msgstr ""
+
+#: content-single.php:23 content.php:25
+#, php-format
+msgid "<span class=\"post_date\">%2$s by %3$s"
+msgstr ""
+
+#: content-single.php:37 content.php:40
+msgid "No comments"
+msgstr ""
+
+#: content-single.php:37 content.php:40
+msgid "One comment"
+msgstr ""
+
+#: content-single.php:37 content.php:40
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: content-single.php:60
+msgid "Category"
+msgstr ""
+
+#: content-single.php:65
+msgid "Tags"
+msgstr ""
+
+#: content.php:21
+#, php-format
+msgid "Permalink to %s"
+msgstr ""
+
+#: functions.php:69
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:70
+msgid "Secondary Menu"
+msgstr ""
+
+#: functions.php:208
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:235
+msgid "Sidebar Right"
+msgstr ""
+
+#: functions.php:236
+msgid ""
+"This sidebar is located on the right-hand side of each page. This is Default "
+"Side bar."
+msgstr ""
+
+#: functions.php:246
+msgid "Sidebar Left"
+msgstr ""
+
+#: functions.php:247
+msgid "This sidebar is located on the left-hand side of each page."
+msgstr ""
+
+#: functions.php:257
+msgid "Footer One"
+msgstr ""
+
+#: functions.php:258
+msgid ""
+"This sidebar is located on Footer and its First section. Occupies 4 Columns "
+"out of 12."
+msgstr ""
+
+#: functions.php:267
+msgid "Footer Two"
+msgstr ""
+
+#: functions.php:268
+msgid ""
+"This sidebar is located on Footer and its Second section.Occupies 4 Columns "
+"out of 12."
+msgstr ""
+
+#: functions.php:277
+msgid "Footer Three"
+msgstr ""
+
+#: functions.php:278 functions.php:289
+msgid ""
+"This sidebar is located on Footer and its Third section. Occupies 4 Columns "
+"out of 12."
+msgstr ""
+
+#: functions.php:288
+msgid "Footer Four"
+msgstr ""
+
+#: functions.php:303
+msgid "Front Page Widget One"
+msgstr ""
+
+#: functions.php:304
+msgid "This widget area is active only on frontpage and first widget."
+msgstr ""
+
+#: functions.php:313
+msgid "Front Page Widget Two"
+msgstr ""
+
+#: functions.php:314
+msgid "This widget area is active only on frontpage and second widget."
+msgstr ""
+
+#: functions.php:323
+msgid "Front Page Widget Three"
+msgstr ""
+
+#: functions.php:324
+msgid "This widget area is active only on frontpage and third widget."
+msgstr ""
+
+#: functions.php:334
+msgid "Front Page Widget Four"
+msgstr ""
+
+#: functions.php:335
+msgid "This widget area is active only on frontpage and fourth widget."
+msgstr ""
+
+#: functions.php:380
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:380
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:401
+msgid "Post author"
+msgstr ""
+
+#: functions.php:409
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:418
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:427
+msgid "Reply"
+msgstr ""
+
+#: functions.php:452 functions.php:455
+msgid ", "
+msgstr ""
+
+#: functions.php:466
+#, php-format
+msgid "View all posts by %s"
+msgstr ""
+
+#: functions.php:472
+#, php-format
+msgid ""
+"This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author"
+"\"> by %4$s</span>."
+msgstr ""
+
+#: functions.php:474
+#, php-format
+msgid ""
+"This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</"
+"span>."
+msgstr ""
+
+#: functions.php:476
+#, php-format
+msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: sidebar-left.php:19 sidebar.php:15
+msgid "No widgets found."
+msgstr ""
+
+#: sidebar-left.php:20 sidebar.php:16
+#, php-format
+msgid ""
+"It seems you don't have any widgets in your sidebar! Would you like to %s "
+"now?"
+msgstr ""
+
+#: tag.php:21
+#, php-format
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: inc/options.php:32
+msgid "Three"
+msgstr ""
+
+#: inc/options.php:33
+msgid "Four"
+msgstr ""
+
+#: inc/options.php:37
+msgid "Boxed"
+msgstr ""
+
+#: inc/options.php:38
+msgid "Wide"
+msgstr ""
+
+#: inc/options.php:43
+msgid "French Toast"
+msgstr ""
+
+#: inc/options.php:44
+msgid "Pancake"
+msgstr ""
+
+#: inc/options.php:45
+msgid "Omelette"
+msgstr ""
+
+#: inc/options.php:46
+msgid "Crepe"
+msgstr ""
+
+#: inc/options.php:47
+msgid "Waffle"
+msgstr ""
+
+#: inc/options.php:109
+msgid "Basic Settings"
+msgstr ""
+
+#: inc/options.php:113
+msgid "Header Background"
+msgstr ""
+
+#: inc/options.php:114
+msgid "If set this will be used as your sites header background."
+msgstr ""
+
+#: inc/options.php:119
+msgid "Site Logo"
+msgstr ""
+
+#: inc/options.php:120
+msgid "If set this will be used as your sites logo."
+msgstr ""
+
+#: inc/options.php:125
+msgid "Theme Layout"
+msgstr ""
+
+#: inc/options.php:126
+msgid "This option allows you to set theme layout Boxed or Full Width/Wide."
+msgstr ""
+
+#: inc/options.php:149
+msgid "Widget Areas in Extended Footer"
+msgstr ""
+
+#: inc/options.php:150
+msgid ""
+"This option allows you to set how many widget areas you want in footer. "
+"Default is 3."
+msgstr ""
+
+#: inc/options.php:159
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/options.php:160
+msgid "Your sites copyright statement."
+msgstr ""
+
+#: inc/options.php:166
+msgid "Front Page Settings"
+msgstr ""
+
+#: inc/options.php:170
+msgid "Settings for Slider on Home page"
+msgstr ""
+
+#: inc/options.php:171
+msgid "Check to display Slider. Defaults to true."
+msgstr ""
+
+#: inc/options.php:177
+msgid "Slider Image 1"
+msgstr ""
+
+#: inc/options.php:178 inc/options.php:190 inc/options.php:202
+#: inc/options.php:214
+msgid "Set image for slider. Preferred size 1010x400"
+msgstr ""
+
+#: inc/options.php:183
+msgid "Enter text here to be displayed in Caption of Image 1."
+msgstr ""
+
+#: inc/options.php:189
+msgid "Slider Image 2"
+msgstr ""
+
+#: inc/options.php:195
+msgid "Enter text here to be displayed in Caption of Image 2."
+msgstr ""
+
+#: inc/options.php:201
+msgid "Slider Image 3"
+msgstr ""
+
+#: inc/options.php:207
+msgid "Enter text here to be displayed in Caption of Image 3."
+msgstr ""
+
+#: inc/options.php:213
+msgid "Slider Image 4"
+msgstr ""
+
+#: inc/options.php:219
+msgid "Enter text here to be displayed in Caption of Image 4."
+msgstr ""
+
+#: inc/options.php:225
+msgid ""
+"Blurb Settings - Following section allows you to configure your blurb on "
+"home page."
+msgstr ""
+
+#: inc/options.php:231
+msgid "Check to display Blurb on home page."
+msgstr ""
+
+#: inc/options.php:238
+msgid "Enter text here to be displayed in Blurb Section."
+msgstr ""
+
+#: inc/options.php:245
+msgid "Check to display Blurb Button."
+msgstr ""
+
+#: inc/options.php:252
+msgid "Set title for Blurb Button."
+msgstr ""
+
+#: inc/options.php:259
+msgid "Link for Blurb Button"
+msgstr ""
+
+#: inc/options.php:265
+msgid "Widget Areas in Front Page"
+msgstr ""
+
+#: inc/options.php:266
+msgid ""
+"This option allows you to set how many widget areas you want in Frontpage. "
+"Default is 3."
+msgstr ""
+
+#: inc/options.php:276
+msgid "Social"
+msgstr ""
+
+#: inc/options.php:280
+msgid "Social Settings"
+msgstr ""
+
+#: inc/options.php:281
+msgid "Check to display Social Icons in Footer."
+msgstr ""
+
+#: inc/options.php:287
+msgid "Facebook"
+msgstr ""
+
+#: inc/options.php:288
+msgid "Your Facebook Profile."
+msgstr ""
+
+#: inc/options.php:294
+msgid "Google Plus"
+msgstr ""
+
+#: inc/options.php:295
+msgid "Your Google Plus Profile."
+msgstr ""
+
+#: inc/options.php:301
+msgid "Twitter"
+msgstr ""
+
+#: inc/options.php:302
+msgid "Your Twitter Profile."
+msgstr ""
+
+#: inc/options.php:308
+msgid "LinkedIn"
+msgstr ""
+
+#: inc/options.php:309
+msgid "Your LinkedIn Profile."
+msgstr ""
+
+#: inc/options.php:315
+msgid "Pinterest"
+msgstr ""
+
+#: inc/options.php:316
+msgid "Your Pinterest Profile."
+msgstr ""
+
+#: inc/options.php:322
+msgid "RSS"
+msgstr ""
+
+#: inc/options.php:323
+msgid "Your RSS url."
+msgstr ""
+
+#: inc/options.php:330
+msgid "Ads & Tracking"
+msgstr ""
+
+#: inc/options.php:334
+msgid "Ads Setting"
+msgstr ""
+
+#: inc/options.php:335
+msgid "Check to display ads after header"
+msgstr ""
+
+#: inc/options.php:342
+msgid "Code to display ads immediately after header on all pages/posts."
+msgstr ""
+
+#: inc/options.php:349
+msgid "Check to display ads in Starting of Individual Post"
+msgstr ""
+
+#: inc/options.php:356
+msgid ""
+"Code to display ads in single post - After title on the top start of the post"
+msgstr ""
+
+#: inc/options.php:364
+msgid "Check to display ads in the end of Individual Post"
+msgstr ""
+
+#: inc/options.php:371
+msgid "Code to display ads in single post - After post in the bottom"
+msgstr ""
+
+#: inc/options.php:377
+msgid "Tracking Code"
+msgstr ""
+
+#: inc/options.php:378
+msgid ""
+"Google Analytics Tracking code goes here. It will be included in to your "
+"footer"
+msgstr ""
+
+#: inc/admin/options-framework.php:173 inc/admin/options-framework.php:388
+msgid "Theme Options"
+msgstr ""
+
+#: inc/admin/options-framework.php:204
+msgid "Clear"
+msgstr ""
+
+#: inc/admin/options-framework.php:205
+msgid "Default"
+msgstr ""
+
+#: inc/admin/options-framework.php:206
+msgid "Select Color"
+msgstr ""
+
+#: inc/admin/options-framework.php:252
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: inc/admin/options-framework.php:284
+msgid "Default options restored."
+msgstr ""
+
+#: inc/admin/options-framework.php:338
+msgid "Options saved."
+msgstr ""
+
+#: inc/admin/options-media-uploader.php:51
+msgid "No file chosen"
+msgstr ""
+
+#: inc/admin/options-media-uploader.php:54
+#: inc/admin/options-media-uploader.php:111
+msgid "Upload"
+msgstr ""
+
+#: inc/admin/options-media-uploader.php:56
+#: inc/admin/options-media-uploader.php:112
+msgid "Remove"
+msgstr ""
+
+#: inc/admin/options-media-uploader.php:59
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: inc/admin/options-media-uploader.php:83
+msgid "View File"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:232
+msgid "No Repeat"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:233
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:234
+msgid "Repeat Vertically"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:235
+msgid "Repeat All"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:248
+msgid "Top Left"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:249
+msgid "Top Center"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:250
+msgid "Top Right"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:251
+msgid "Middle Left"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:252
+msgid "Middle Center"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:253
+msgid "Middle Right"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:254
+msgid "Bottom Left"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:255
+msgid "Bottom Center"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:256
+msgid "Bottom Right"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:269
+msgid "Scroll Normally"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:270
+msgid "Fixed in Place"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:344
+msgid "Normal"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:345
+msgid "Italic"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:346
+msgid "Bold"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:347
+msgid "Bold Italic"
+msgstr ""
+
+#: inc/widgets/openstrap-archive-widget.php:23
+msgid ""
+"A monthly archive of your site&#8217;s posts. The look and feel has been "
+"altered to suit your theme."
+msgstr ""
+
+#: inc/widgets/openstrap-archive-widget.php:24
+msgid "Openstrap Archives"
+msgstr ""
+
+#: inc/widgets/openstrap-archive-widget.php:41
+msgid "Select Month"
+msgstr ""
+
+#: inc/widgets/openstrap-archive-widget.php:71
+#: inc/widgets/openstrap-category-widget.php:101
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/openstrap-archive-widget.php:73
+#: inc/widgets/openstrap-category-widget.php:105
+msgid "Display as dropdown"
+msgstr ""
+
+#: inc/widgets/openstrap-archive-widget.php:75
+#: inc/widgets/openstrap-category-widget.php:108
+msgid "Show post counts"
+msgstr ""
+
+#: inc/widgets/openstrap-category-widget.php:24
+msgid ""
+"A list or dropdown of categories. The look and feel has been altered to suit "
+"your theme."
+msgstr ""
+
+#: inc/widgets/openstrap-category-widget.php:25
+msgid "Openstrap Categories"
+msgstr ""
+
+#: inc/widgets/openstrap-category-widget.php:31
+msgid "Categories"
+msgstr ""
+
+#: inc/widgets/openstrap-category-widget.php:48
+msgid "Select Category"
+msgstr ""
+
+#: inc/widgets/openstrap-category-widget.php:111
+msgid "Show hierarchy"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:18
+msgid "Enable Feedburner form on Your Website."
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:24
+msgid "Openstrap Feedburner"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:55
+msgid "Feedburner Id:"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:60
+msgid "Title Text:"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:65
+msgid "Sub Text:"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:70
+msgid "Select Style:"
+msgstr ""
+
+#: inc/widgets/google-cse-widget.php:18
+msgid "Enable Google Custom Search on Your Website."
+msgstr ""
+
+#: inc/widgets/google-cse-widget.php:24
+msgid "Openstrap Google Custom Search"
+msgstr ""
+
+#: inc/widgets/google-cse-widget.php:42
+msgid "Search Engine Id:"
+msgstr ""
+
+#: inc/widgets/google-cse-widget.php:46
+msgid "Results Page URI:"
+msgstr ""
+
+#: layouts/content-sidebar-sidebar.php:21 layouts/content-sidebar.php:19
+#: layouts/full-width.php:19 layouts/sidebar-content-sidebar.php:22
+#: layouts/sidebar-content.php:21 layouts/sidebar-sidebar-content.php:24
+msgid "No posts to display"
+msgstr ""
+
+#: layouts/content-sidebar-sidebar.php:25 layouts/content-sidebar.php:23
+#: layouts/full-width.php:23 layouts/sidebar-content-sidebar.php:26
+#: layouts/sidebar-content.php:25 layouts/sidebar-sidebar-content.php:28
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr ""
+
+#: page-templates/full-width.php:25 page-templates/three-column.php:22
+#: page-templates/two-column-sidebar-left.php:23
+#: page-templates/two-column-sidebar-right.php:23
+msgid "No posts."
+msgstr ""
+
+#: page-templates/full-width.php:26 page-templates/three-column.php:23
+#: page-templates/two-column-sidebar-left.php:24
+#: page-templates/two-column-sidebar-right.php:24
+msgid "Sorry about this, I couldn't seem to find what you were looking for."
+msgstr ""
