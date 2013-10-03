@@ -4,3 +4,17 @@
 version 0.1		2013-09-20
 * Initial Version
 
+version 0.2		2013-09-25
+* Fixed issues for word break
+* Added some css for lists in sidebar
+* Added configuration option for sidebar width
+
+version 0.3		2013-10-01
+* Fixed css for clearing floats
+* Fixed esc_url for home_url
+
+version 0.4		2013-10-01
+* Fixed theme prefix in functions.php
+
+version 0.5		2013-10-02
+* Fixed theme prefix in custom widgets

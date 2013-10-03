@@ -24,7 +24,7 @@ get_header(); ?>
 		<h2><?php _e('No posts.', 'openstrap' ); ?></h2>
 		<p class="lead"><?php _e('Sorry about this, I couldn\'t seem to find what you were looking for.', 'openstrap' ); ?></p>		
 	<?php endif; ?>			
-	<?php custom_pagination(); ?>
+	<?php openstrap_custom_pagination(); ?>
 	</div>	
 	<!-- End Main Content -->	
 <?php get_footer(); ?>

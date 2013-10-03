@@ -10,7 +10,7 @@
 ?>
 <?php
 
-class FrontPageText_Widget extends WP_Widget {
+class openstrap_frontpage_text_widget extends WP_Widget {
 
          public function __construct() {
 

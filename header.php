@@ -87,7 +87,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand visible-xs" href="<?php echo home_url( '/' ); ?>"><i class="icon-home"></i></a>
+          <a class="navbar-brand visible-xs" href="<?php echo esc_url (home_url( '/' )); ?>"><i class="icon-home"></i></a>
         </div>
         <div class="navbar-collapse collapse">
 		<?php wp_nav_menu( array( 
@@ -96,7 +96,7 @@
 							'depth' =>4,
 							'container' => false, 
 							'fallback_cb' => false, 
-							'walker' => new theme_navigation() ) ); ?>	
+							'walker' => new openstrap_theme_navigation() ) ); ?>	
         </div><!--/.nav-collapse -->
       </div>
     </div>

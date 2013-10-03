@@ -10,7 +10,7 @@
 ?>
 <?php
 
-class GoogleCSE_Widget extends WP_Widget {
+class openstrap_googlecse_widget extends WP_Widget {
 
          public function __construct() {
 

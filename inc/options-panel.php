@@ -44,23 +44,23 @@ jQuery(document).ready(function() {
  * Loads the Options From Different Location as per themes requirement 
  * 
  */
-function mytheme_options_framework_location_override() {
+function openstrap_options_framework_location_override() {
 	return array('/inc/options.php');
 }
-add_filter('options_framework_location','mytheme_options_framework_location_override');
+add_filter('options_framework_location','openstrap_options_framework_location_override');
 
 /* 
  * This is an example of how to override a default filter
  * for 'textarea' sanitization and $allowedposttags + embed and script.
  */
-add_action('admin_init','optionscheck_change_santiziation', 100);
+add_action('admin_init','openstrap_optionscheck_change_santiziation', 100);
  
-function optionscheck_change_santiziation() {
+function openstrap_optionscheck_change_santiziation() {
     remove_filter( 'of_sanitize_textarea', 'of_sanitize_textarea' );
-    add_filter( 'of_sanitize_textarea', 'custom_sanitize_textarea' );
+    add_filter( 'of_sanitize_textarea', 'openstrap_custom_sanitize_textarea' );
 }
  
-function custom_sanitize_textarea($input) {
+function openstrap_custom_sanitize_textarea($input) {
     global $allowedposttags;
     $custom_allowedtags["embed"] = array(
       "src" => array(),

@@ -95,12 +95,12 @@ require(get_template_directory() . '/inc/widgets/openstrap-social-box-widget.php
 require(get_template_directory() . '/inc/widgets/openstrap-front-page-text.php');
 
 
-function awakening_load_custom_widgets() {
-	register_widget( 'GoogleCSE_Widget' );	
-	register_widget( 'SocialIconBox_Widget' );	
-	register_widget( 'FrontPageText_Widget' );	
+function openstrap_load_custom_widgets() {
+	register_widget( 'openstrap_googlecse_widget' );	
+	register_widget( 'openstrap_socialiconbox_widget' );	
+	register_widget( 'openstrap_frontpage_text_widget' );	
 }
-add_action('widgets_init', 'awakening_load_custom_widgets');
+add_action('widgets_init', 'openstrap_load_custom_widgets');
 
 
 /**
@@ -378,13 +378,13 @@ add_action( 'widgets_init', 'openstrap_widgets_init' );
  */
 function openstrap_content_nav( $html_id ) {
 	//Call Custom Pagination here instead of calling it on each and every page where its required
-	custom_pagination();	
+	openstrap_custom_pagination();	
 }
 
 
-add_filter('get_avatar','change_avatar_css');
+add_filter('get_avatar','openstrap_change_avatar_css');
 
-function change_avatar_css($class) {
+function openstrap_change_avatar_css($class) {
 $class = str_replace("class='avatar", "class='media-object avatar", $class) ;
 return $class;
 }
@@ -593,7 +593,7 @@ function openstrap_customize_preview_js() {
 add_action( 'customize_preview_init', 'openstrap_customize_preview_js' );
 
 
-class theme_navigation extends Walker_Nav_Menu {
+class openstrap_theme_navigation extends Walker_Nav_Menu {
 
 	/**
 	 * @see Walker_Nav_Menu::start_lvl()
@@ -698,7 +698,7 @@ function openstrap_nav_menu_css_class( $classes ) {
 add_filter( 'nav_menu_css_class', 'openstrap_nav_menu_css_class' );
 
 // Create a graceful fallback to wp_page_menu
-function theme_page_menu() {
+function openstrap_theme_page_menu() {
 
 	$args = array(
 	'sort_column' => 'menu_order, post_title',
@@ -715,7 +715,7 @@ function theme_page_menu() {
 	wp_page_menu($args);
 }
 
-function custom_pagination($pages = '', $range = 2)
+function openstrap_custom_pagination($pages = '', $range = 2)
 {  
      $showitems = ($range * 2)+1;  
 	 

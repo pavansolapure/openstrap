@@ -27,7 +27,7 @@ get_header(); ?>
 		
 	<?php endif; ?>		
 	
-	<?php custom_pagination(); ?>
+	<?php openstrap_custom_pagination(); ?>
 	</div>	
 	<!-- End Main Content -->	
 
