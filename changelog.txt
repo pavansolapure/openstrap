@@ -18,3 +18,7 @@ version 0.4		2013-10-01
 
 version 0.5		2013-10-02
 * Fixed theme prefix in custom widgets
+
+version 0.6		2013-10-20
+* Fixed logo section for smaller screens.
+* Changed order of style sheets loaded. [on request]

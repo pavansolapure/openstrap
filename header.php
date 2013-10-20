@@ -38,42 +38,42 @@
 		$header_background = of_get_option('header_background');
 	?>
 	<?php if ( $header !== "blank" ) : ?>
-	<header class="site-header hidden-xs" role="banner" style="background:url('<?php echo esc_url($header_background); ?>');">	
-	<div id="header-top">
-		<div class="container">
-			<div class="pull-right"  id="header-top-container">
-				<div class="pull-right">
-				<?php 
-					wp_nav_menu( array( 'theme_location' => 'secondary', 
-										'menu_class' => 'list-inline', 
-										'depth' =>1, 
-										'container' => false, 
-										'fallback_cb' => false ) ); 
-				?>
+	<header class="site-header" role="banner" style="background:url('<?php echo esc_url($header_background); ?>');">	
+		<div id="header-top">
+			<div class="container hidden-xs">
+				<div class="pull-right"  id="header-top-container">
+					<div class="pull-right">
+					<?php 
+						wp_nav_menu( array( 'theme_location' => 'secondary', 
+											'menu_class' => 'list-inline', 
+											'depth' =>1, 
+											'container' => false, 
+											'fallback_cb' => false ) ); 
+					?>
+					</div>
 				</div>
 			</div>
-		</div>
-		
-	</div>	
+			
+		</div>	
 
-			<div class="container hidden-xs">		
-			<div class="row logo-row">
-			  <div class="col-md-4 pull-left">
-				<?php if ( $site_logo != '' ) : ?>
-				<a href="<?php echo esc_url( home_url( '/' )); ?>"><img src="<?php echo esc_url($site_logo); ?>" alt="<?php bloginfo('description'); ?>" class="img-responsive" /></a>
-				<?php elseif($site_logo == '' || !isset($site_logo)): ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<small><?php bloginfo( 'description' ); ?></small>
-				<?php endif; ?>					
-			  </div>	  
-			  <div class="col-md-8">
-				<div class="pull-right">
-					<?php if ( is_active_sidebar( 'openstrap_header_right' ) ) : ?>
-						<?php dynamic_sidebar( 'openstrap_header_right' ); ?>	
-					<?php endif; ?>	
-				</div>
-			  </div>
-			</div>	  
+		<div class="container">		
+		 <div class="row logo-row">
+		  <div class="col-md-4 pull-left">
+			<?php if ( $site_logo != '' ) : ?>
+			<a href="<?php echo esc_url( home_url( '/' )); ?>"><img src="<?php echo esc_url($site_logo); ?>" alt="<?php bloginfo('description'); ?>" class="img-responsive" /></a>
+			<?php elseif($site_logo == '' || !isset($site_logo)): ?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<small><?php bloginfo( 'description' ); ?></small>
+			<?php endif; ?>					
+		  </div>	  
+		  <div class="col-md-8 hidden-xs">
+			<div class="pull-right">
+				<?php if ( is_active_sidebar( 'openstrap_header_right' ) ) : ?>
+					<?php dynamic_sidebar( 'openstrap_header_right' ); ?>	
+				<?php endif; ?>	
+			</div>
+		  </div>
+		</div>	  
 	
 	</header>
 	<?php endif; ?>

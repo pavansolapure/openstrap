@@ -161,24 +161,24 @@ function openstrap_scripts_styles() {
 		//wp_enqueue_style( 'openstrap-fonts', add_query_arg( $query_args, "$protocol://fonts.googleapis.com/css" ), array(), null );
 	}
 
-	/*
-	 * Loads our main stylesheet.
-	 */
-	wp_enqueue_style( 'openstrap-style', get_stylesheet_uri() );
+	// Load JavaScripts
+	wp_enqueue_script( 'jquery', get_template_directory_uri().'/assets/js/jquery.js', null, '1.10.2', true);
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', null, '3.0.0', true );			
+	
+	// Load Stylesheets
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );		
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );	
 
 	/*
 	 * Loads the Internet Explorer specific stylesheet.
 	 */
-	wp_enqueue_style( 'openstrap-ie', get_template_directory_uri() . '/css/font-awesome-ie7.min.css', array( 'openstrap-style' ), '20130920' );
-	$wp_styles->add_data( 'openstrap-ie', 'conditional', 'lt IE 9' );
+	wp_enqueue_style( 'openstrap-ie', get_template_directory_uri() . '/css/font-awesome-ie7.min.css');
+	$wp_styles->add_data( 'openstrap-ie', 'conditional', 'lt IE 9' );		
 	
-	// Load JavaScripts
-	wp_enqueue_script( 'jquery', get_template_directory_uri().'/assets/js/jquery.js', null, '1.10.2', true);
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', null, '3.0.0', true );		
-	
-	// Load Stylesheets
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );		
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );
+	/*
+	 * Loads our main stylesheet.
+	 */
+	wp_enqueue_style( 'openstrap-style', get_stylesheet_uri() );	
 
 }
 add_action( 'wp_enqueue_scripts', 'openstrap_scripts_styles' );
