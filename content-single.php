@@ -86,8 +86,9 @@
 		</div>	
 			
 		<?php get_template_part('author-box'); ?>		
-		
+		<?php tha_comments_before(); ?>
 		<?php comments_template( '', true ); ?>
+		<?php tha_comments_after(); ?>
 	</footer>
 
 </article>

@@ -22,7 +22,10 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 				<?php get_template_part( 'content', 'page' ); ?>
+				
+				<?php tha_comments_before(); ?>
 				<?php comments_template( '', true ); ?>
+				<?php tha_comments_after(); ?>
 			<?php endwhile; // end of the loop. ?>
 
 		</div><!-- #content -->

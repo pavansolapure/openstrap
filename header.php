@@ -19,15 +19,18 @@
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
 <head>
+<?php tha_head_top(); ?>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php tha_head_bottom(); ?>
 <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
+<?php tha_body_top(); ?>
 	<div id="bodychild">
 	<!-- Wrap all page content here -->  
 	<div id="wrap">	
@@ -38,6 +41,7 @@
 		$header_background = of_get_option('header_background');
 	?>
 	<?php if ( $header !== "blank" ) : ?>
+	<?php tha_header_before(); ?>
 	<header class="site-header" role="banner" style="background:url('<?php echo esc_url($header_background); ?>');">	
 		<div id="header-top">
 			<div class="container hidden-xs">
@@ -76,6 +80,7 @@
 		</div>	  
 	
 	</header>
+	<?php tha_header_after(); ?>
 	<?php endif; ?>
 
     <!-- Fixed navbar -->
@@ -100,7 +105,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </div>
-	
+	<?php tha_content_before(); ?>
     <div class="container" id="main-container">
 	<div class="row" id="main-row">
-
+	<?php tha_content_top(); ?>

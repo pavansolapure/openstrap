@@ -109,6 +109,11 @@ add_action('widgets_init', 'openstrap_load_custom_widgets');
 require( get_template_directory() . '/inc/custom-header.php' );
 
 /**
+ * Adds support for a THA theme hooks.
+ */
+require( get_template_directory() . '/inc/tha-theme-hooks.php' );
+
+/**
  * Enqueues scripts and styles for front-end.
  *
  * @since Openstrap 0.1

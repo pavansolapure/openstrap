@@ -24,7 +24,9 @@
 			$copyrighttxt = ! empty($copyrighttxt) ? $copyrighttxt : __('&copy; ', 'openstrap') . __(date('Y')) . sprintf(' <a href="%1$s" title="%2$s" rel="home">%3$s</a>', esc_url(home_url( '/' )), get_bloginfo( 'name' ), get_bloginfo( 'name' ));
 			$d=sprintf('<a href="%1$s" title="%2$s" rel="home">%3$s</a>', esc_url(home_url( '/' )), get_bloginfo( 'name' ), get_bloginfo( 'name' ));			
 		?>
+<?php tha_footer_before(); ?>
 <div id="footer">
+<?php tha_footer_top(); ?>
   <div class="container footer-nav ">	
 	<div class="pull-left">
 	<?php 
@@ -37,8 +39,11 @@
 	</div> 	
   </div>
 </div>
-</footer> 
+<?php tha_footer_bottom(); ?>
+</footer>
+<?php tha_footer_after(); ?>
 </div> <!-- #bodychild -->
+<?php tha_body_bottom(); ?>
 <?php wp_footer(); ?>
 </body>
 </html>
