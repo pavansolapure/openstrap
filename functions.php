@@ -162,8 +162,7 @@ function openstrap_scripts_styles() {
 	}
 
 	// Load JavaScripts
-	wp_enqueue_script( 'jquery', get_template_directory_uri().'/assets/js/jquery.js', null, '1.10.2', true);
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', null, '3.0.0', true );			
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.0', true );			
 	
 	// Load Stylesheets
 	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );		

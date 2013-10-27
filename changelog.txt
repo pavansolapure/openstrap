@@ -22,3 +22,9 @@ version 0.5		2013-10-02
 version 0.6		2013-10-20
 * Fixed logo section for smaller screens.
 * Changed order of style sheets loaded. [on request]
+
+version 0.7		2013-10-21
+* Changed the way jquery enqueued
+
+version 0.8		2013-10-22
+* Changed copyright format in styles.css
