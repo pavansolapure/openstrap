@@ -36,9 +36,16 @@
 		$site_logo = of_get_option('site_logo');
 		$header =  get_header_textcolor();	
 		$header_background = of_get_option('header_background');
-	?>
+		
+		//check and get if any header image set from WP Settings
+		$wp_header_image = get_header_image();		
+		if(empty($header_background) && !empty($wp_header_image)):
+			$header_background = get_header_image();
+		endif;
+		
+	?>	
 	<?php if ( $header !== "blank" ) : ?>
-	<header class="site-header" role="banner" style="background:url('<?php echo esc_url($header_background); ?>');">	
+		<header class="site-header" role="banner" <?php if(!empty($header_background)): ?> style="background:url('<?php echo esc_url($header_background); ?>');" <?php endif;?>> 	
 		<div id="header-top">
 			<div class="container hidden-xs">
 				<div class="pull-right"  id="header-top-container">
@@ -52,8 +59,7 @@
 					?>
 					</div>
 				</div>
-			</div>
-			
+			</div>			
 		</div>	
 
 		<div class="container">		

@@ -164,8 +164,15 @@ function openstrap_scripts_styles() {
 	// Load JavaScripts
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.0', true );			
 	
-	// Load Stylesheets
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );		
+	// Load Stylesheets. Load bootstrap css as per theme option selected
+	$theme_style = of_get_option('theme_style');	
+	if($theme_style=="default") {
+		wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/bootstrap.css' );
+		wp_enqueue_style( 'bootstrap-custom', get_template_directory_uri().'/css/custom.css' );
+	} else {
+		wp_enqueue_style( 'bootstrap', get_template_directory_uri().'/css/'.$theme_style.'/bootstrap.css' );
+		wp_enqueue_style( 'bootstrap-custom', get_template_directory_uri().'/css/'.$theme_style.'/custom.css' );
+	}
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/font-awesome.min.css' );	
 
 	/*
@@ -776,16 +783,22 @@ function openstrap_wp_footer() {
 			echo of_get_option('code_for_wp_footer');
 		endif;
 	endif;
+
 	?>
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/html5shiv.js" type="text/javascript"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/respond.min.js" type="text/javascript"></script>
 	<![endif]-->
-	<script type='text/javascript'>
-	$('.carousel').carousel();
-	</script>
 	<?php
+		//Add this piece of JS only when Slider/carousel template is used.
+		if(is_page_template('page-templates/front-page-2.php')):
+		?>
+		<script type='text/javascript'>
+		$('.carousel').carousel();
+		</script>
+		<?php	
+		endif;
 }
 add_action( 'wp_footer', 'openstrap_wp_footer',100);
 
