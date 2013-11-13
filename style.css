@@ -3,11 +3,11 @@ Theme Name: Openstrap
 Theme URI: http://www.opencodez.com/free-themes/openstrap
 Author: Opencodez Team
 Author URI: http://www.opencodez.com
-Description: The Openstrap theme for WordPress developed on top of <a href="http://getbootstrap.com/">Twitter Bootstrap Framework 3.0</a>. The theme is fully responsive and can be viewed on any device. Openstrap theme provides 6 different layouts for posts and pages, 11 widget areas, 3 strategic menu locations, nicely designed and customizable footer with its own widgets. In addition to this the theme comes with pre-installed widgets for Google Custom Search Engine, Social Icon Box and Front Page Marketing Text unit. Place them anywhere you want.
-Version: 0.8
+Description: The Openstrap theme for WordPress developed on top of <a href="http://getbootstrap.com/">Twitter Bootstrap Framework 3.0</a>. The theme is fully responsive and can be viewed on any device. Openstrap theme provides 6 different layouts for posts and pages, 11 widget areas, 3 strategic menu locations, nicely designed and customizable footer with its own widgets. In addition to this the theme comes with pre-installed widgets for Google Custom Search Engine, Social Icon Box and Front Page Marketing Text unit. Openstrap provides 4 beautiful color schemes to choose from. Use any color theme that is suitable to your need.
+Version: 0.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: light, orange, white, one-column, two-columns, three-columns, right-sidebar,left-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Tags: light, orange, white, one-column, two-columns, three-columns, right-sidebar,left-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, custom-colors
 Text Domain: openstrap
 */
 
@@ -42,9 +42,9 @@ background-attachment: scroll;
   height: auto !important;
   height: 100%;
   /* Negative indent footer by its height */
-  margin: 0 auto -70px;
+  #margin: 0 auto -70px;
   /* Pad bottom by footer height */
-  padding: 0 0 70px;
+  padding: 0 0 30px;
 }
 
 p {
@@ -180,11 +180,11 @@ padding-top:3px;
 }
 
 #header-top {
-	background-color: #333;	
+	#background-color: #333;	
 	font-size: 12px;
 	height: 23px;
 	max-height: 23px;		
-	border-bottom: 1px solid #444;
+	#border-bottom: 1px solid #444;
 }
 
 #header-top > .container {
@@ -193,12 +193,12 @@ max-height: 23px;
 }
 
 #header-top a:hover, a:focus {
-color: #dd4814;
+#color: #dd4814;
 text-decoration: underline;
 }
 
 #header-top a {
-color: #fff;
+#color: #fff;
 text-decoration: none;
 }
 
@@ -355,18 +355,6 @@ hr.style-eight:after {
 }
 
 /*For Submit Button in Comment*/
-
-input:hover[type="submit"]{
-color: #ffffff;
-background-color: #b83c11;
-border-color: #a5360f;
-}
-
-input[type="submit"] {
-color: #ffffff;
-background-color: #dd4814;
-border-color: #dd4814;
-}
 
 input[type="submit"] {
 display: inline-block;
@@ -563,3 +551,7 @@ h2 a:focus {
 ul.nav li.dropdown:hover > ul.dropdown-menu{
     display: block;    
 }
+
+/* Hide WP Stats Smily at bottom of page */
+img#wpstats{display:none}
+
