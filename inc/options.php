@@ -115,6 +115,19 @@ function optionsframework_options() {
 		'type' => 'heading');
 		
 	$options[] = array(
+		'name' => "Theme Style",
+		'desc' => "These are the beautiful color theme styles you can choose from for your website.",
+		'id' => "theme_style",
+		'std' => "default",
+		'type' => "images",
+		'options' => array(
+			'default' => $imagepath . 'default-style.png',
+			'style1' => $imagepath . 'style1.png',
+			'style2' => $imagepath . 'style2.png',
+			'style3' => $imagepath . 'style3.png')
+	);			
+		
+	$options[] = array(
 		'name' => __('Header Background', 'options_check'),
 		'desc' => __('If set this will be used as your sites header background.', 'options_check'),
 		'id' => 'header_background',
