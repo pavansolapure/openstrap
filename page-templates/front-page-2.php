@@ -19,7 +19,7 @@ get_header(); ?>
 		get_template_part( 'slides', 'index' );
 	}
 ?>
-
+	
 	<?php if(of_get_option('display_blurb') == '1'): ?>	
 	<!--blurb-->
 	<div class="col-md-12">
@@ -27,7 +27,9 @@ get_header(); ?>
 	  <div class="container text-center">
 		<h1><?php echo of_get_option('blurb_heading'); ?></h1>
 		<p class="lead"><?php echo of_get_option('blurb_text'); ?></p>
+		<?php if(of_get_option('display_blurb_button') == '1'): ?>	
 		<p><a class="btn btn-success btn-sm" href="<?php echo get_permalink( of_get_option('blurb_button_link_page')); ?>"><?php echo of_get_option('blurb_button_title'); ?> &nbsp; <i class="icon-arrow-right icon-large"></i>  </a></p>
+		<?php endif; ?>	
 		<hr class="style-eight"/>
 	  </div>
 	</div>

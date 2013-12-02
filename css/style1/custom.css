@@ -26,3 +26,7 @@ color: #fff;
 #header-top a:hover, a:focus {
 color: #2c3e50;
 }
+
+.popular-posts ul li:before, .widget_categories ul li:before, .widget_recent_entries ul li:before {
+color: #2c3e50;
+}

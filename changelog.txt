@@ -1,12 +1,14 @@
 *** Revision History ***
 ===========================
 
+version 1.0		2013-11-15
+* Minor css changes in custom.css
+* Bug fix in front-page templates to show blurb button
+
 version 0.9		2013-11-11
-* Added 4 color themes configuration
 * Added CSS to hide WP Stats smily image
 * Added Carousal JS code to pages using slider templates
 * Updated header.php to use WP Setting header image if not set from theme options
-* Changed styles.css to remove extra space from bottom if no extended footer is configured
 
 version 0.8		2013-10-22
 * Changed copyright format in styles.css
