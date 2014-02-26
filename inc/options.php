@@ -126,16 +126,24 @@ function optionsframework_options() {
 			'style2' => $imagepath . 'style2.png',
 			'style3' => $imagepath . 'style3.png')
 	);			
+	
+	$options[] = array(
+		'name' =>  __('Header Background', 'options_check'),
+		'desc' => __('Change the header background CSS. Recommended Sizes 1216x105', 'options_check'),
+		'id' => 'site_header_background',
+		'std' => $background_defaults,
+		'type' => 'background' );		
 		
 	$options[] = array(
-		'name' => __('Header Background', 'options_check'),
-		'desc' => __('If set this will be used as your sites header background.', 'options_check'),
-		'id' => 'header_background',
-		'type' => 'upload');	
-
+		'name' =>  __('Body Background', 'options_check'),
+		'desc' => __('Change the body background CSS.', 'options_check'),
+		'id' => 'body_background',
+		'std' => $background_defaults,
+		'type' => 'background' );		
+		
 	$options[] = array(
 		'name' => __('Site Logo', 'options_check'),
-		'desc' => __('If set this will be used as your sites logo.', 'options_check'),
+		'desc' => __('If set this will be used as your sites logo. Recommended Sizes 200x99, 250x99', 'options_check'),
 		'id' => 'site_logo',
 		'type' => 'upload');			
 		
@@ -192,6 +200,27 @@ function optionsframework_options() {
 		'type' => 'text');
 		
 	$options[] = array(
+		'name' => __('Header Contact Phone', 'options_check'),
+		'desc' => __('Your contact phone will be displayed on header top left area.', 'options_check'),
+		'id' => 'header_contact_phone',
+		'std' => '',
+		'type' => 'text');		
+		
+	$options[] = array(
+		'name' => __('Header Contact Mail', 'options_check'),
+		'desc' => __('Your contact mail will be displayed on header top left area.', 'options_check'),
+		'id' => 'header_contact_mail',
+		'std' => '',
+		'type' => 'text');				
+		
+	$options[] = array(
+		'name' => __('Display Search Icon in Nav Menu', 'options_check'),
+		'desc' => __('Check to display Search in Nav Menu. Defaults to True.', 'options_check'),
+		'id' => 'display_nav_search',
+		'std' => '1',
+		'type' => 'checkbox');		
+		
+	$options[] = array(
 		'name' => __('Front Page Settings', 'options_check'),
 		'type' => 'heading');	
 		
@@ -201,6 +230,20 @@ function optionsframework_options() {
 		'id' => 'display_slider',
 		'std' => '0',
 		'type' => 'checkbox');
+		
+	$options[] = array(
+		'name' => __('Slider Speed', 'options_check'),
+		'desc' => __('Set Slider Interval (in miliseconds).', 'options_check'),
+		'id' => 'slider_interval',
+		'std' => '2500',
+		'type' => 'text');		
+
+	$options[] = array(
+		'name' => __('Slider Pause on Mouse Hover', 'options_check'),
+		'desc' => __('Check if you want Slider to pause on mouse hover.', 'options_check'),
+		'id' => 'pause_on_hover',
+		'std' => '1',
+		'type' => 'checkbox');		
 		
 	$options[] = array(
 		'name' => __('Slider Image 1', 'options_check'),
