@@ -3,11 +3,11 @@ Theme Name: Openstrap
 Theme URI: http://www.opencodez.com/free-themes/openstrap
 Author: Opencodez Team
 Author URI: http://www.opencodez.com
-Description: The Openstrap theme for WordPress developed on top of <a href="http://getbootstrap.com/">Twitter Bootstrap Framework 3.0</a>. The theme is fully responsive and can be viewed on any device. Openstrap theme provides 6 different layouts for posts and pages, 11 widget areas, 3 strategic menu locations, nicely designed and customizable footer with its own widgets. In addition to this the theme comes with pre-installed widgets for Google Custom Search Engine, Social Icon Box and Front Page Marketing Text unit. Openstrap provides 4 beautiful color schemes to choose from. Use any color theme that is suitable to your need.
-Version: 1.0
+Description: The Openstrap theme for WordPress developed on top of Twitter Bootstrap Framework 3.0. The theme is fully responsive and can be viewed on any device. Openstrap theme provides 6 different layouts for posts and pages, 11 widget areas, 3 strategic menu locations, nicely designed and customizable footer with its own widgets. In addition to this the theme comes with pre-installed widgets for Google Custom Search Engine, Social Icon Box and Front Page Marketing Text unit. Openstrap provides 4 beautiful color schemes to choose from. Use any color theme that is suitable to your need.
+Version: 1.0.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: light, orange, white, one-column, two-columns, three-columns, right-sidebar,left-sidebar, flexible-width, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, custom-colors
+Tags: light, orange, white, one-column, two-columns, three-columns, right-sidebar,left-sidebar, responsive-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, translation-ready, custom-colors
 Text Domain: openstrap
 */
 
@@ -22,12 +22,6 @@ http://www.gnu.org/licenses/gpl-3.0.html
 
 /*Theme CSS*/
 
-body {
-background-image: url('images/bg_body1.png');
-background-repeat: repeat;
-background-position: top center;
-background-attachment: scroll;
-}
 
 #bodychild{	
 	max-width: 100%;
@@ -84,16 +78,7 @@ margin-left:4px;
 	margin-bottom:20px;	
 }
 .sidebar-right, .sidebar-left, .site-content,.entry-content, .entry-meta , article, span, a {
-	#word-wrap: break-word;	
-	-ms-word-break: break-all;
-	word-break: break-all;
-
-	/* Non standard for webkit */
-	word-break: break-word;
-
-	-webkit-hyphens: auto;
-	-moz-hyphens: auto;
-	hyphens: auto;	
+	word-wrap: break-word;
 }
 
 .entry-meta {
@@ -203,7 +188,7 @@ text-decoration: none;
 }
 
 #header-top-container {
-padding-top: 2px;
+padding-top: 3px;
 }
 
 .header-widget {   
@@ -310,45 +295,6 @@ hr.style-eight:after {
     background: white;
 }
 
-.nav li.dropdown ul.dropdown-menu li:HOVER ul{ 
-	display:block; 
-	position:absolute; 
-	left:100%; 
-	-webkit-border-radius: 3px; 
-	-moz-border-radius: 3px; 
-	border-radius: 3px; 
-}
- 
-.nav li.dropdown ul.dropdown-menu ul{ 
-	display: none; 
-	float:right; 
-	position: relative; 
-	top: auto; 
-	margin-top: -30px; 
-}
- 
-.nav li.dropdown ul.dropdown-menu .dropdown-menu::before{ 
-	content: ''; 
-	display: inline-block; 
-	border-top: 7px solid transparent; 
-	border-bottom: 7px solid transparent; 
-	border-right:7px solid #CCC; 
-	border-right-color: rgba(0, 0, 0, 0.2); 
-	position: absolute; 
-	top: 9px; 
-	left: -14px; 
-}
- 
-.nav li.dropdown ul.dropdown-menu .dropdown-menu::after { 
-	content: ''; 
-	display: inline-block; 
-	border-top: 6px solid transparent; 
-	border-bottom: 6px solid transparent; 
-	border-right:6px solid white; 
-	position: absolute; 
-	top: 10px; 
-	left: -12px; 
-}
 
 .pagination-centered {
 	text-align: center;
@@ -391,7 +337,6 @@ margin-bottom: 30px;
 	display: inline-block;
 	font-size: 30px;
 }
-
 
 /* Responsive images */
 .entry-content img,
@@ -547,11 +492,231 @@ h2 a:focus {
 	#color: #dd4814;
 }
 
-/* Required to make menu appear on mose hover. */
-ul.nav li.dropdown:hover > ul.dropdown-menu{
-    display: block;    
+.header-contact {
+color: #fff;
 }
+
+.header-contact span {
+margin-right:5px;
+}
+
+/*Bootstrap Multilevel Menu*/
+
+.dropdown-submenu{position:relative;}
+.dropdown-submenu>.dropdown-menu{top:0;left:100%;margin-top:-6px;margin-left:-1px;-webkit-border-radius:0 6px 6px 6px;-moz-border-radius:0 6px 6px 6px;border-radius:0 6px 6px 6px;}
+/*.dropdown-submenu:hover>.dropdown-menu{display:block;}*/
+.dropdown-submenu>a:after{display:block;content:" ";float:right;width:0;height:0;border-color:transparent;border-style:solid;border-width:5px 0 5px 5px;border-left-color:#cccccc;margin-top:5px;margin-right:-10px;}
+.dropdown-submenu:hover>a:after{border-left-color:#ffffff;}
+.dropdown-submenu.pull-left{float:none;}.dropdown-submenu.pull-left>.dropdown-menu{left:-100%;margin-left:10px;-webkit-border-radius:6px 0 6px 6px;-moz-border-radius:6px 0 6px 6px;border-radius:6px 0 6px 6px;}
+
+/* search input field */
+input[type=search] {
+	background: #ededed url(images/search-icon.png) no-repeat 7px center;
+	border: solid 1px #ccc;
+	#padding: 9px 10px 9px 27px;
+	padding-left:35px;
+	width: 37px;
+	height: 37px;
+	-webkit-border-radius: 10em;
+	-moz-border-radius: 10em;
+	border-radius: 10em;	
+	-webkit-transition: all .5s;
+	-moz-transition: all .5s;
+	transition: all .5s;
+	top : 4px;
+}
+input[type=search]:focus {
+	width: 130px;
+	background-color: #fff;
+	outline: none;
+}
+
+/* placeholder */
+input:-moz-placeholder {
+	color: transparent;
+}
+input::-webkit-input-placeholder {
+	color: transparent;
+}
+
+#topbar-search-sm input[type=search] {
+	margin-top:4px;
+}
+
+.navbar-toggle {
+	float:left;
+	margin-left: 15px;
+}
+
+.navbar-search-sm {
+margin-right:30px;
+}
+
 
 /* Hide WP Stats Smily at bottom of page */
 img#wpstats{display:none}
 
+
+
+/* Optin Dark Style*/
+
+#optin_dark {
+	background: #333;
+	#border: 1px solid #111;
+	color: #fff;
+	padding: 35px 30px;
+	padding-bottom:20px;
+	padding-top:20px;
+	border-radius: 3px;
+	
+}
+#optin_dark input {
+	border: 1px solid #111;
+	font-size: 15px;
+	margin-bottom: 10px;
+	padding: 8px 10px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 2px 2px #111;
+	-moz-box-shadow: 0 2px 2px #111;
+	-webkit-box-shadow: 0 2px 2px #111;
+	-webkit-transition: all 0.25s linear;
+	-moz-transition: all 0.25s linear;
+	transition: all 0.25s linear;		
+	width: 100%;
+}
+#optin_dark input.email { color: #999; background: #fff url(images/optin/email.png) no-repeat 10px center; padding-left: 35px }
+#optin_dark input.name { color: #999; background: #fff url(images/optin/name.png) no-repeat 10px center; padding-left: 35px }
+#optin_dark input[type="submit"] {
+	background: #f15123;
+	border: 1px solid #111;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 8px 0;
+	text-shadow: -1px -1px #3a060a;
+	width: 100%;
+
+}
+#optin_dark input[type="submit"]:hover { color: #fff; background: #0079a1;}
+
+#optin_dark h4 {
+color: #fff;
+text-align: center;
+padding-left: 8px;
+padding: 5px 10px;
+text-transform: uppercase;
+font-weight:600;
+}
+
+#optin_dark span { 
+background: url(images/optin/lock.png) no-repeat center left; 
+clear:both;
+padding-left: 20px;
+font-size: 13px;
+text-align: center;
+}
+
+
+/* Optin Light Style*/
+
+#optin_light {
+	background: #efefef;
+	border: 1px solid #ccc;
+	padding: 35px 30px;
+	padding-top:20px;
+	padding-bottom:20px;
+	border-radius: 3px;
+}
+
+#optin_light input {
+	background: #fff;
+	border: 1px solid #ccc;
+	font-size: 15px;
+	margin-bottom: 10px;
+	padding: 8px 10px;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	box-shadow: 0 2px 2px #ddd;
+	-moz-box-shadow: 0 2px 2px #ddd;
+	-webkit-box-shadow: 0 2px 2px #ddd;
+	width: 100%;
+}
+#optin_light input.name { color: #999; background: #fff url(images/optin/name.png) no-repeat 10px center; padding-left: 35px }
+#optin_light input.email { color: #999; background: #fff url(images/optin/email.png) no-repeat 10px center; padding-left: 35px }
+#optin_light input[type="submit"] {
+	background: #217b30 url(images/optin/green.png) repeat-x top;
+	border: 1px solid #137725;
+	color: #fff;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+	padding: 8px 0;
+	text-shadow: -1px -1px #1c5d28;
+	width: 100%;
+}
+#optin_light input[type="submit"]:hover { color: #c6ffd1 }
+
+#optin_light h4 {
+text-align: center;
+padding-left: 8px;
+padding: 5px 10px;
+text-transform: uppercase;
+font-weight:600;
+}
+
+#optin_light span { 
+background: url(images/optin/lock.png) no-repeat center left; 
+clear:both;
+padding-left: 20px;
+font-size: 13px;
+text-align: center;
+}
+
+
+@media (max-width: 991px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+        margin: 7.5px -15px;
+    }
+    .navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+	
+	.navbar-search-sm {
+		margin-right: 0px;
+	}	
+}
+
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) { 
+.navbar-form {
+ padding: 0px;
+ border:0px;
+-webkit-box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(255, 255, 255, 0.1);
+box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(255, 255, 255, 0.1);
+}
+.navbar-search-sm {
+	margin-right: 30px;
+}
+}
