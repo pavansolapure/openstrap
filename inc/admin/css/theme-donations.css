@@ -1,0 +1,33 @@
+/* This part is added by Pavan Solapure - www.opencodez.com 
+------------------------------------------------------------*/
+#paypal_buy {
+	background: #F7F08F;
+	border: 1px solid #ccc;
+	padding: 20px 15px;
+	text-align: center;
+	margin-bottom: 15px; 
+	max-width:300px;
+	#float:right;
+	margin-right: 35px; 
+}
+
+#paypal_buy input {
+	border: 0px;
+	font-size: 15px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 0px;
+	color:#333;
+}
+
+#paypal_buy select {
+	border: 0px;
+	font-size: 15px;	
+	padding: 6px 10px;
+	color:#333;
+}
+
+#paypal_buy .small {
+text-align: left;
+font-size: 13px;
+}
