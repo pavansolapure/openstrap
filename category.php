@@ -12,7 +12,23 @@
  */
 
 get_header(); ?>
-<?php $col =  openstrap_get_content_cols(); ?>
+<?php 
+	$col =  openstrap_get_content_cols();
+	$os_layout = of_get_option('page_layouts'); 	
+?>
+
+<?php
+	if($os_layout ==  "sidebar-content" || $os_layout ==  "sidebar-content-sidebar") {
+		get_sidebar('left');
+	}		
+	
+?>
+<?php	
+	if($os_layout ==  "sidebar-sidebar-content") {		
+		get_sidebar('left');
+		get_sidebar();		
+	}
+?>
 <div class="col-md-<?php echo $col;?>" role="content">
 	<section id="primary" class="site-content">
 		<div id="content" role="main">
@@ -51,5 +67,16 @@ get_header(); ?>
 		</div><!-- #content -->
 	</section><!-- #primary -->
 </div><!-- .col-md-<?php echo $col;?> -->
-<?php get_sidebar(); ?>
+<?php
+	if($os_layout ==  "content-sidebar-sidebar") {
+		get_sidebar('left');
+	}	
+?>
+<?php	
+	if($os_layout ==  "content-sidebar" || 
+	   $os_layout ==  "sidebar-content-sidebar" ||
+	   $os_layout ==  "content-sidebar-sidebar") {		
+		get_sidebar();
+	}
+?>
 <?php get_footer(); ?>

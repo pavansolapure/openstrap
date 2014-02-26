@@ -95,10 +95,15 @@ require(get_template_directory() . '/inc/widgets/openstrap-social-box-widget.php
 require(get_template_directory() . '/inc/widgets/openstrap-front-page-text.php');
 
 
+//Feedburner Subscription
+require(get_template_directory() . '/inc/widgets/openstrap-feedburner-widget.php');
+
+
 function openstrap_load_custom_widgets() {
 	register_widget( 'openstrap_googlecse_widget' );	
 	register_widget( 'openstrap_socialiconbox_widget' );	
 	register_widget( 'openstrap_frontpage_text_widget' );	
+	register_widget( 'openstrap_feedburner_subscription_widget' );	
 }
 add_action('widgets_init', 'openstrap_load_custom_widgets');
 
@@ -555,6 +560,10 @@ function openstrap_body_class( $classes ) {
 
 	if ( ! is_multi_author() )
 		$classes[] = 'single-author';
+		
+	$body_background = of_get_option('body_background');
+	if(!empty($body_background))
+		$classes[] = 'openstrap-custom-background';			
 
 	return $classes;
 }
@@ -599,101 +608,205 @@ function openstrap_customize_preview_js() {
 add_action( 'customize_preview_init', 'openstrap_customize_preview_js' );
 
 
+
 class openstrap_theme_navigation extends Walker_Nav_Menu {
 
-	/**
-	 * @see Walker_Nav_Menu::start_lvl()
-	 */
-	function start_lvl( &$output, $depth ) {
-		$output .= "\n<ul class=\"dropdown-menu\">\n";
-	}
+        /**
+         * @see Walker::start_lvl()
+         * @since 3.0.0
+         *
+         * @param string $output Passed by reference. Used to append additional content.
+         * @param int $depth Depth of page. Used for padding.
+         */
+        public function start_lvl( &$output, $depth = 0, $args = array() ) {
+                $indent = str_repeat( "\t", $depth );
+                $output .= "\n$indent<ul role=\"menu\" class=\"dropdown-menu\">\n";
+        }
 
-	/**
-	 * @see Walker_Nav_Menu::start_el()
-	 */
-	function start_el( &$output, $item, $depth, $args ) {
-		global $wp_query;
-		
-		$indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
-		$li_attributes = $class_names = $value = '';
-		$classes = empty( $item->classes ) ? array() : (array) $item->classes;
-		$classes[] = 'menu-item-' . $item->ID;
+        /**
+         * @see Walker::start_el()
+         * @since 3.0.0
+         *
+         * @param string $output Passed by reference. Used to append additional content.
+         * @param object $item Menu item data object.
+         * @param int $depth Depth of menu item. Used for padding.
+         * @param int $current_page Menu item ID.
+         * @param object $args
+         */
+        public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
+                $indent = ( $depth ) ? str_repeat( "\t", $depth ) : '';
 
-		if ( $args->has_children ) {
-			$classes[] = ( 1 > $depth) ? 'dropdown': 'dropdown-submenu';
-			$li_attributes .= ' data-dropdown="dropdown"';
-		}
+                /**
+                 * Dividers, Headers or Disabled
+                 * =============================
+                 * Determine whether the item is a Divider, Header, Disabled or regular
+                 * menu item. To prevent errors we use the strcasecmp() function to so a
+                 * comparison that is not case sensitive. The strcasecmp() function returns
+                 * a 0 if the strings are equal.
+                 */
+                if ( strcasecmp( $item->attr_title, 'divider' ) == 0 && $depth === 1 ) {
+                        $output .= $indent . '<li role="presentation" class="divider">';
+                } else if ( strcasecmp( $item->title, 'divider') == 0 && $depth === 1 ) {
+                        $output .= $indent . '<li role="presentation" class="divider">';
+                } else if ( strcasecmp( $item->attr_title, 'dropdown-header') == 0 && $depth === 1 ) {
+                        $output .= $indent . '<li role="presentation" class="dropdown-header">' . esc_attr( $item->title );
+                } else if ( strcasecmp($item->attr_title, 'disabled' ) == 0 ) {
+                        $output .= $indent . '<li role="presentation" class="disabled"><a href="#">' . esc_attr( $item->title ) . '</a>';
+                } else {
 
-		$class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
-		$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
+                        $class_names = $value = '';
 
-		$id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
-		$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+                        $classes = empty( $item->classes ) ? array() : (array) $item->classes;
+                        $classes[] = 'menu-item-' . $item->ID;
 
-		$output .= $indent . '<li' . $id . $value . $class_names . $li_attributes . '>';
+                        $class_names = join( ' ', apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args ) );
 
-		$attributes	=	$item->attr_title	? ' title="'  . esc_attr( $item->attr_title ) .'"' : '';
-		$attributes	.=	$item->target		? ' target="' . esc_attr( $item->target     ) .'"' : '';
-		$attributes	.=	$item->xfn			? ' rel="'    . esc_attr( $item->xfn        ) .'"' : '';
-		$attributes	.=	$item->url			? ' href="'   . esc_attr( $item->url        ) .'"' : '';
-		$attributes	.=	$args->has_children	? ' class="dropdown-toggle"' : '';
+                        if ( $args->has_children ) {
+							if ( $depth === 0 )
+                                $class_names .= ' dropdown';
+							else
+								$class_names .= ' dropdown-submenu';
+						}		
 
-		$item_output	=	$args->before . '<a' . $attributes . '>';
-		$item_output	.=	$args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
-		$item_output	.=	( $args->has_children AND 1 > $depth ) ? ' <b class="caret"></b>' : '';
-		$item_output	.=	'</a>' . $args->after;
+                        if ( in_array( 'current-menu-item', $classes ) )
+                                $class_names .= ' active';
 
-		$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
-	}
+                        $class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 
-	/**
-	 * @see Walker::display_element()
-	 */
-	function display_element( $element, &$children_elements, $max_depth, $depth = 0, $args, &$output ) {
+                        $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args );
+                        $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-		if ( ! $element )
-			return;
+                        $output .= $indent . '<li' . $id . $value . $class_names .'>';
 
-		$id_field = $this->db_fields['id'];
+                        $atts = array();
+                        $atts['title']  = ! empty( $item->title )        ? $item->title        : '';
+                        $atts['target'] = ! empty( $item->target )        ? $item->target        : '';
+                        $atts['rel']    = ! empty( $item->xfn )                ? $item->xfn        : '';
 
-		//display this element
-		if ( is_array( $args[0] ) )
-			$args[0]['has_children'] = (bool) ( ! empty( $children_elements[$element->$id_field] ) AND $depth != $max_depth - 1 );
-		elseif ( is_object(  $args[0] ) )
-			$args[0]->has_children = (bool) ( ! empty( $children_elements[$element->$id_field] ) AND $depth != $max_depth - 1 );
+                        // If item has_children add atts to a.
+                        if ( $args->has_children) {
+                                $atts['href']                   = '#';
+                                $atts['data-toggle']        = 'dropdown';
+                                $atts['class']                        = 'dropdown-toggle';
+                        } else {
+                                $atts['href'] = ! empty( $item->url ) ? $item->url : '';
+                        }
 
-		$cb_args = array_merge( array( &$output, $element, $depth ), $args );
-		call_user_func_array( array( &$this, 'start_el' ), $cb_args );
+                        $atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 
-		$id = $element->$id_field;
+                        $attributes = '';
+                        foreach ( $atts as $attr => $value ) {
+                                if ( ! empty( $value ) ) {
+                                        $value = ( 'href' === $attr ) ? esc_url( $value ) : esc_attr( $value );
+                                        $attributes .= ' ' . $attr . '="' . $value . '"';
+                                }
+                        }
 
-		// descend only when the depth is right and there are childrens for this element
-		if ( ( $max_depth == 0 OR $max_depth > $depth+1 ) AND isset( $children_elements[$id] ) ) {
+                        $item_output = $args->before;
 
-			foreach ( $children_elements[ $id ] as $child ) {
+                        /*
+                         * Glyphicons
+                         * ===========
+                         * Since the the menu item is NOT a Divider or Header we check the see
+                         * if there is a value in the attr_title property. If the attr_title
+                         * property is NOT null we apply it as the class name for the glyphicon.
+                         */
+                        if ( ! empty( $item->attr_title ) )
+                                $item_output .= '<a'. $attributes .'><span class="glyphicon ' . esc_attr( $item->attr_title ) . '"></span>&nbsp;';
+                        else
+                                $item_output .= '<a'. $attributes .'>';
 
-				if ( ! isset( $newlevel ) ) {
-					$newlevel = true;
-					//start the child delimiter
-					$cb_args = array_merge( array( &$output, $depth ), $args );
-					call_user_func_array( array( &$this, 'start_lvl' ), $cb_args );
-				}
-				$this->display_element( $child, $children_elements, $max_depth, $depth + 1, $args, $output );
-			}
-			unset( $children_elements[ $id ] );
-		}
+                        $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
+                        $item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
+                        $item_output .= $args->after;
 
-		if ( isset( $newlevel ) AND $newlevel ) {
-			//end the child delimiter
-			$cb_args = array_merge( array( &$output, $depth ), $args );
-			call_user_func_array( array( &$this, 'end_lvl' ), $cb_args );
-		}
+                        $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+                }
+        }
 
-		//end this element
-		$cb_args = array_merge( array( &$output, $element, $depth ), $args );
-		call_user_func_array( array( &$this, 'end_el' ), $cb_args );
-	}
+        /**
+         * Traverse elements to create list from elements.
+         *
+         * Display one element if the element doesn't have any children otherwise,
+         * display the element and its children. Will only traverse up to the max
+         * depth and no ignore elements under that depth.
+         *
+         * This method shouldn't be called directly, use the walk() method instead.
+         *
+         * @see Walker::start_el()
+         * @since 2.5.0
+         *
+         * @param object $element Data object
+         * @param array $children_elements List of elements to continue traversing.
+         * @param int $max_depth Max depth to traverse.
+         * @param int $depth Depth of current element.
+         * @param array $args
+         * @param string $output Passed by reference. Used to append additional content.
+         * @return null Null on failure with no changes to parameters.
+         */
+        public function display_element( $element, &$children_elements, $max_depth, $depth, $args, &$output ) {
+        if ( ! $element )
+            return;
+
+        $id_field = $this->db_fields['id'];
+
+        // Display this element.
+        if ( is_object( $args[0] ) )
+           $args[0]->has_children = ! empty( $children_elements[ $element->$id_field ] );
+
+        parent::display_element( $element, $children_elements, $max_depth, $depth, $args, $output );
+    }
+
+        /**
+         * Menu Fallback
+         * =============
+         * If this function is assigned to the wp_nav_menu's fallback_cb variable
+         * and a manu has not been assigned to the theme location in the WordPress
+         * menu manager the function with display nothing to a non-logged in user,
+         * and will add a link to the WordPress menu manager if logged in as an admin.
+         *
+         * @param array $args passed from the wp_nav_menu function.
+         *
+         */
+        public static function fallback( $args ) {
+                if ( current_user_can( 'manage_options' ) ) {
+
+                        extract( $args );
+
+                        $fb_output = null;
+
+                        if ( $container ) {
+                                $fb_output = '<' . $container;
+
+                                if ( $container_id )
+                                        $fb_output .= ' id="' . $container_id . '"';
+
+                                if ( $container_class )
+                                        $fb_output .= ' class="' . $container_class . '"';
+
+                                $fb_output .= '>';
+                        }
+
+                        $fb_output .= '<ul';
+
+                        if ( $menu_id )
+                                $fb_output .= ' id="' . $menu_id . '"';
+
+                        if ( $menu_class )
+                                $fb_output .= ' class="' . $menu_class . '"';
+
+                        $fb_output .= '>';
+                        $fb_output .= '<li><a href="' . admin_url( 'nav-menus.php' ) . '">Add a menu</a></li>';
+                        $fb_output .= '</ul>';
+
+                        if ( $container )
+                                $fb_output .= '</' . $container . '>';
+
+                        echo $fb_output;
+                }
+        }
 }
+
 
 function openstrap_nav_menu_css_class( $classes ) {
 	if ( in_array('current-menu-item', $classes ) OR in_array( 'current-menu-ancestor', $classes ) )
@@ -761,27 +874,68 @@ function openstrap_custom_pagination($pages = '', $range = 2)
 }	
 
 function openstrap_wp_head() {
+	$body_background = of_get_option('body_background');	
+	$customcss = array();
+	$bcss = '';
+	if(!empty($body_background['color']) || !empty($body_background['image'])) {
+		$bcss = 'body.openstrap-custom-background { background:';
+		$bcss .= (!empty($body_background['color'])) ? " ".$body_background['color'] : '';
+		$bcss .= (!empty($body_background['image'])) ? " url('".$body_background['image']."')" : '';
+		$bcss .= (!empty($body_background['image']) && !empty($body_background['repeat'])) ? " ".$body_background['repeat'] : '';
+		$bcss .= (!empty($body_background['image']) && !empty($body_background['attachment'])) ? " ".$body_background['attachment'] : '';
+		$bcss .= (!empty($body_background['image']) && !empty($body_background['position'])) ? " ".$body_background['position'] : '';
+		$bcss .= ';}';
+		$customcss[] = $bcss;
+	}
+	
+	$header_background = of_get_option('site_header_background');	
+	if(!empty($header_background['color']) || !empty($header_background['image'])) {
+		$bcss = '.site-header .header-body { background:';
+		$bcss .= (!empty($header_background['color'])) ? " ".$header_background['color'] : '';
+		$bcss .= (!empty($header_background['image'])) ? " url('".$header_background['image']."')" : '';
+		$bcss .= (!empty($header_background['image']) && !empty($header_background['repeat'])) ? " ".$header_background['repeat'] : '';
+		$bcss .= (!empty($header_background['image']) && !empty($header_background['attachment'])) ? " ".$header_background['attachment'] : '';
+		$bcss .= (!empty($header_background['image']) && !empty($header_background['position'])) ? " ".$header_background['position'] : '';
+		$bcss .= ';}';	
+		$customcss[] = $bcss;
+	}
+	
+	if(!empty($customcss)) { ?>
+	<style type="text/css" media="all"> 
+	<?php 
+		$cnt = count($customcss);
+		foreach($customcss as $index => $css) {
+			echo $css;
+			if($index < $cnt-1) echo "\r\n";
+		}
+	?> 
+	</style>	
+	<?php }	
+
+
 	if(of_get_option('add_code_in_wp_head') == '1'):
-		if('' != trim(of_get_option('code_for_wp_head'))):
-			echo of_get_option('code_for_wp_head');
+		if('' != trim(of_get_option('code_for_wp_head'))):			
+			?><style type="text/css" media="all"> <?php echo of_get_option('code_for_wp_head'); ?></style>
+			<?php
 		endif;
 	endif;
 	
 	$theme_layout = of_get_option('theme_layout'); 
 	if("boxed" == $theme_layout) {
 	?>
-		<style type="text/css" media="all"> #bodychild{	width:90%;}</style>
-	<?php	
+	<style type="text/css" media="all"> #bodychild{width:90%;}</style><?php	
 	}
 }
-add_action( 'wp_head', 'openstrap_wp_head');
+add_action( 'wp_head', 'openstrap_wp_head',100);
 
 
 function openstrap_wp_footer() {
 	if(of_get_option('add_code_in_wp_footer') == '1'):
-		if('' != trim(of_get_option('code_for_wp_footer'))):
-			echo of_get_option('code_for_wp_footer');
-		endif;
+		if('' != trim(of_get_option('code_for_wp_footer'))):?>
+		<script type='text/javascript'>
+			<?php echo of_get_option('code_for_wp_footer'); ?>
+		</script>
+		<?php endif;
 	endif;
 
 	?>
@@ -790,18 +944,37 @@ function openstrap_wp_footer() {
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/html5shiv.js" type="text/javascript"></script>
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/respond.min.js" type="text/javascript"></script>
 	<![endif]-->
+	<!-- Bootstrap 3 dont have core support to multilevel menu, we need this JS to implement that -->
+	<script src="<?php echo get_template_directory_uri(); ?>/js/theme-menu.js" type="text/javascript"></script>
 	<?php
 		//Add this piece of JS only when Slider/carousel template is used.
-		if(is_page_template('page-templates/front-page-2.php')):
+		if(is_front_page() || is_page_template('page-templates/front-page-2.php')):
+		
+		$slider_interval = (of_get_option('slider_interval') > 0) ? of_get_option('slider_interval') : 2500;;
+		$pause_on_hover = (of_get_option('pause_on_hover')=='1') ? "hover" : "none";
 		?>
 		<script type='text/javascript'>
-		$('.carousel').carousel();
+		jQuery.noConflict();
+		jQuery(document).ready(function(){
+			jQuery('.carousel').carousel({ interval: <?php echo $slider_interval; ?>, cycle: true, wrap: true, pause:"<?php echo $pause_on_hover;?>" });	
+		});				
 		</script>
 		<?php	
 		endif;
 }
 add_action( 'wp_footer', 'openstrap_wp_footer',100);
 
+add_filter('the_excerpt','openstrap_excerpt');
+function openstrap_excerpt(){
+	global $post;
+	$link='<span class="readmore"><a href="'.get_permalink().'" > Continue reading &rarr;</a></span>';
+	$excerpt=get_the_excerpt();		
+	if ( preg_match('/<!--more(.*?)?-->/', $post->post_content) ) {	
+		echo $excerpt.$link;
+	} else {
+		echo $excerpt;
+	}
+}
 
 function openstrap_excerpt_read_more($text) {
    return '  <span><a href="'.get_permalink().'" class="readmore">Continue reading &rarr;</a></span>';
@@ -815,13 +988,12 @@ add_filter('excerpt_length', 'openstrap_custom_excerpt_length');
 
 
 function openstrap_get_branding() {	
-	$note = "<span class=\"brand-note\"> | Design by <a href=\"http://www.opencodez.com/\" target=\"_blank\">OpenCodez</a></span>";
+	$note = "<span class=\"brand-note\"> | Design by <a href=\"http://www.opencodez.com/\" target=\"_blank\">Opencodez Themes</a></span>";
 	return $note;
 }
 
 
 //Custom Functions for Widget area
-
 function openstrap_widget_field( $widget, $args = array(), $value ) {
 	$args = wp_parse_args($args, array ( 
 		'field' => 'title',
@@ -850,9 +1022,9 @@ function openstrap_widget_field( $widget, $args = array(), $value ) {
 			echo '" name="' . $field_name . '" type="hidden" value="';
 			echo esc_attr( $value ) . '" />';
 			echo '<input class="media-upload-btn" id="' . $field_id;
-			echo '_btn" name="' . $field_name . '_btn" type="button" value="'. __( 'Choose', 'openstrap' ) . '">';
+			echo '_btn" name="' . $field_name . '_btn" type="button" value="'. __( 'Choose', 'awakening' ) . '">';
 			echo '<input class="media-upload-del" id="' . $field_id;
-			echo '_del" name="' . $field_name . '_del" type="button" value="'. __( 'Remove', 'openstrap' ) . '">';
+			echo '_del" name="' . $field_name . '_del" type="button" value="'. __( 'Remove', 'awakening' ) . '">';
 			break;
 		case 'text':
 		case 'hidden':
@@ -881,6 +1053,9 @@ function openstrap_widget_field( $widget, $args = array(), $value ) {
 			echo checked( '1', $value, false ) . ' /> ';
 			echo '<label for="' . $field_id . '"> ' . $desc . '</label>';
 			break;
+		case 'label':
+			echo '<label for="' . $field_id . '"> ' . $desc . '</label>';
+			break;			
 		case 'category':
 			echo '<select id="' . $field_id . '" name="' . $field_name . '">';
 			if ( ! empty( $label_all ) ) {
@@ -912,11 +1087,33 @@ function openstrap_widget_field( $widget, $args = array(), $value ) {
 				echo '>' . $option['name'] . '</option>';
 			}
 			echo '</select>';
-			break;
+			break;			
+		case 'icon-select':
+			ksort($options, SORT_STRING);
+			echo '<div class="icon-select"><select class="widget-icon widget-lib-font-awesome" id="' . $field_id . '" name="' . $field_name . '">';
+			foreach ( $options as $k=>$v ) {
+				if ( $k == $value )
+					$selected = 'selected="selected"';
+				else
+					$selected = '';	
+				echo '<option value="' . $k . '" ' . $selected. '>' . $v.'&nbsp;&nbsp;'.$k . '</option>';
+			}
+			echo '</select></div>';
+			break;		
+
+		// Color picker
+		case "color":
+			$default_color = '';
+			echo '<input class="' . $class . '" id="' . $field_id;
+			echo '" name="' . $field_name . '" type="text" value="';
+			echo esc_attr( $value ) . '"'.$default_color.' />';			
+ 	
+			break;			
 	}
 	if ( $ptag )
 		echo '</p>';
 }
+
 
 function openstrap_thumbnail_array() {
 	$sizes = array (
@@ -959,23 +1156,33 @@ function openstrap_get_sidebar_cols( ) {
 	$layout = of_get_option('page_layouts'); 
 	$col = 3;	
 	//theme puts default page, archive pages as 2 columns
-	if($layout=="sidebar-content" || $layout=="content-sidebar" || is_archive()
-	   || is_page_template( 'page-templates/two-column-sidebar-left.php' ) || is_page_template( 'page-templates/two-column-sidebar-right.php' )
-	   || is_page()) 
+	if($layout=="sidebar-content" || 
+	   $layout=="content-sidebar" || 
+	   is_page_template( 'page-templates/sidebar-content.php' ) || 
+	   is_page_template( 'page-templates/content-sidebar.php' ))
 	   {
 			$wide_sidebar = of_get_option('wider_sidebar'); 
 			$col = (empty($wide_sidebar)) ? 3 : 4;
 		}
 		
-	if(is_page_template( 'page-templates/three-column.php' )) {
+	if(is_page_template( 'page-templates/sidebar-content-sidebar.php' ) ||
+	   is_page_template( 'page-templates/content-sidebar-sidebar.php' ) ||
+	   is_page_template( 'page-templates/sidebar-sidebar-content.php' )) {
 		$col = 3;
 	}
+	
 	return $col;
 }
 
 function openstrap_get_content_cols( ) {	
 	$wide_sidebar = of_get_option('wider_sidebar'); 
 	$col = (empty($wide_sidebar)) ? 9 : 8;	
+	$layout = of_get_option('page_layouts'); 
+	if($layout == "sidebar-content-sidebar" || $layout == "content-sidebar-sidebar" || $layout == "sidebar-sidebar-content") {
+		$col = 6;
+	} else if($layout == "full-width") {
+		$col = 12;
+	}	
 	return $col;
 }
 

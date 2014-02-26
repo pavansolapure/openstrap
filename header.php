@@ -43,11 +43,23 @@
 			$header_background = get_header_image();
 		endif;
 		
+		$header_contact_phone = of_get_option('header_contact_phone');
+		$header_contact_mail = of_get_option('header_contact_mail');
+		
+		$display_nav_search = of_get_option('display_nav_search');
 	?>	
 	<?php if ( $header !== "blank" ) : ?>
-		<header class="site-header" role="banner" <?php if(!empty($header_background)): ?> style="background:url('<?php echo esc_url($header_background); ?>');" <?php endif;?>> 	
+		<header class="site-header" role="banner">
 		<div id="header-top">
 			<div class="container hidden-xs">
+				<div class="pull-left header-contact" id="header-top-container">
+				<?php if(!empty($header_contact_phone)):?>
+					<span><i class="icon-phone"></i> <?php echo $header_contact_phone;?></span>
+				<?php endif;?>
+				<?php if(!empty($header_contact_mail)):?>
+					<span><i class="icon-envelope-alt"></i> <a href="mailto:<?php echo $header_contact_mail;?>"><?php echo $header_contact_mail;?></a></span>
+				<?php endif;?>				
+				</div>
 				<div class="pull-right"  id="header-top-container">
 					<div class="pull-right">
 					<?php 
@@ -62,24 +74,27 @@
 			</div>			
 		</div>	
 
-		<div class="container">		
-		 <div class="row logo-row">
-		  <div class="col-md-4 pull-left">
-			<?php if ( $site_logo != '' ) : ?>
-			<a href="<?php echo esc_url( home_url( '/' )); ?>"><img src="<?php echo esc_url($site_logo); ?>" alt="<?php bloginfo('description'); ?>" class="img-responsive" /></a>
-			<?php elseif($site_logo == '' || !isset($site_logo)): ?>
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<small><?php bloginfo( 'description' ); ?></small>
-			<?php endif; ?>					
-		  </div>	  
-		  <div class="col-md-8 hidden-xs">
-			<div class="pull-right">
-				<?php if ( is_active_sidebar( 'openstrap_header_right' ) ) : ?>
-					<?php dynamic_sidebar( 'openstrap_header_right' ); ?>	
-				<?php endif; ?>	
-			</div>
-		  </div>
-		</div>	  
+		<div class="header-body">		
+			<div class="container">
+				 <div class="row logo-row">
+				  <div class="col-md-4 pull-left">
+					<?php if ( $site_logo != '' ) : ?>
+					<a href="<?php echo esc_url( home_url( '/' )); ?>"><img src="<?php echo esc_url($site_logo); ?>" alt="<?php bloginfo('description'); ?>" class="img-responsive" /></a>
+					<?php elseif($site_logo == '' || !isset($site_logo)): ?>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<small><?php bloginfo( 'description' ); ?></small>
+					<?php endif; ?>					
+				  </div>	  
+				  <div class="col-md-8 hidden-xs">
+					<div class="pull-right">
+						<?php if ( is_active_sidebar( 'openstrap_header_right' ) ) : ?>
+							<?php dynamic_sidebar( 'openstrap_header_right' ); ?>	
+						<?php endif; ?>	
+					</div>
+				  </div>
+				</div>
+			</div>	
+		</div>
 	
 	</header>
 	<?php endif; ?>
@@ -93,20 +108,43 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
+		  <!--
           <a class="navbar-brand visible-xs" href="<?php echo esc_url (home_url( '/' )); ?>"><i class="icon-home"></i></a>
+		  -->
+		<?php if(isset($display_nav_search) && $display_nav_search==true): ?> 
+		<div class="navbar-search-sm pull-right visible-sm visible-xs">
+
+				<form class="navbar-search navbar-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<input type="search" name="s" id="s" class="search-fields" placeholder="<?php esc_attr_e( 'Search', 'openstrap' ); ?>" name="s">
+				</form>
+
+		</div>		
+		<?php endif; ?>
+		
         </div>
         <div class="navbar-collapse collapse">
 		<?php wp_nav_menu( array( 
 							'theme_location' => 'primary', 
-							'menu_class' => 'nav navbar-nav', 
+							'menu_class' => 'nav navbar-nav pull-left', 
 							'depth' =>4,
 							'container' => false, 
 							'fallback_cb' => false, 
 							'walker' => new openstrap_theme_navigation() ) ); ?>	
+		
+		<?php if(isset($display_nav_search) && $display_nav_search==true): ?> 	
+		<ul class="nav navbar-nav navbar-right visible-md visible-lg pull-right">
+			<li>
+				<form class="navbar-search navbar-form" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+					<input type="search" name="s" id="s" class="search-fields" placeholder="<?php esc_attr_e( 'Search', 'openstrap' ); ?>" name="s">
+				</form>
+			</li>
+		</ul>
+		<?php endif; ?>		
+							
         </div><!--/.nav-collapse -->
       </div>
     </div>
-	
+
     <div class="container" id="main-container">
 	<div class="row" id="main-row">
 

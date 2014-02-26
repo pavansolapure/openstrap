@@ -1,6 +1,27 @@
 *** Revision History ***
 ===========================
 
+version 1.0.5		2014-02-16
+* Added option to allow expandable search in nav menu
+* Added option to control slider speed and hover event
+* Added new css styles for Feedburner
+* Fixed layout working and made it more uniform
+* Fixed support for multileve menus.
+
+version 1.0.4		2014-01-05
+* Fixed issue in slider automatically not starting
+* Changed the menu behaves in mobile and desktop
+* Added Configuration for header phone and mail
+
+version 1.0.3		2013-12-13
+* Fixed issue in custom codes
+
+version 1.0.2		2013-12-13
+* Changed screenshot
+
+version 1.0.1		2013-12-11
+* Added new Widget for Feedburner Subscription
+
 version 1.0		2013-11-15
 * Minor css changes in custom.css
 * Bug fix in front-page templates to show blurb button
