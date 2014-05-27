@@ -4,7 +4,7 @@ Theme URI: http://www.opencodez.com/free-themes/openstrap
 Author: Opencodez Team
 Author URI: http://www.opencodez.com
 Description: The Openstrap theme for WordPress developed on top of Twitter Bootstrap Framework 3.0. The theme is fully responsive and can be viewed on any device. Openstrap theme provides 6 different layouts for posts and pages, 11 widget areas, 3 strategic menu locations, nicely designed and customizable footer with its own widgets. In addition to this the theme comes with pre-installed widgets for Google Custom Search Engine, Social Icon Box and Front Page Marketing Text unit. Openstrap provides 4 beautiful color schemes to choose from. Use any color theme that is suitable to your need.
-Version: 1.0.5
+Version: 1.0.9
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: light, orange, white, one-column, two-columns, three-columns, right-sidebar,left-sidebar, responsive-layout, custom-background, custom-header, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, translation-ready, custom-colors
@@ -49,10 +49,17 @@ font-size: 15px;
   padding-bottom: 3px;
   margin-bottom: 10px; 
   font-size: 13px;  
-  border-bottom: 1px solid #ddd;    
+  #border-bottom: 1px solid #ddd;    
 }
 .post-meta a {  
     font-size: 13px; 
+}
+
+hr.post-meta-hr {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border: 0;
+  border-top: 1px solid #ddd;
 }
 
 .post_date, .post_comment {
@@ -720,3 +727,5 @@ box-shadow: inset 0 0px 0 rgba(255, 255, 255, 0.1), 0 0px 0 rgba(255, 255, 255, 
 	margin-right: 30px;
 }
 }
+
+

@@ -98,7 +98,6 @@ require(get_template_directory() . '/inc/widgets/openstrap-front-page-text.php')
 //Feedburner Subscription
 require(get_template_directory() . '/inc/widgets/openstrap-feedburner-widget.php');
 
-
 function openstrap_load_custom_widgets() {
 	register_widget( 'openstrap_googlecse_widget' );	
 	register_widget( 'openstrap_socialiconbox_widget' );	
@@ -167,7 +166,9 @@ function openstrap_scripts_styles() {
 	}
 
 	// Load JavaScripts
-	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.0', true );			
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '3.0.0', true );		
+
+
 	
 	// Load Stylesheets. Load bootstrap css as per theme option selected
 	$theme_style = of_get_option('theme_style');	
@@ -185,6 +186,12 @@ function openstrap_scripts_styles() {
 	 */
 	wp_enqueue_style( 'openstrap-ie', get_template_directory_uri() . '/css/font-awesome-ie7.min.css');
 	$wp_styles->add_data( 'openstrap-ie', 'conditional', 'lt IE 9' );		
+	
+    if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+		//WooCommerce
+		wp_register_style('custom-woocommerce', get_template_directory_uri() . '/css/custom-woocommerce.css', array( 'openstrap-style','woocommerce_frontend_styles'));
+		wp_enqueue_style('custom-woocommerce');
+	}		
 	
 	/*
 	 * Loads our main stylesheet.
@@ -377,7 +384,7 @@ function openstrap_widgets_init() {
 	} else {
 		unregister_sidebar( 'openstrap_front_page_four' );
 	}	
-	
+
 	
 }
 add_action( 'widgets_init', 'openstrap_widgets_init' );
@@ -679,13 +686,14 @@ class openstrap_theme_navigation extends Walker_Nav_Menu {
                         $output .= $indent . '<li' . $id . $value . $class_names .'>';
 
                         $atts = array();
-                        $atts['title']  = ! empty( $item->title )        ? $item->title        : '';
+                        $atts['title']  = ! empty( $item->attr_title )        ? $item->attr_title        : '';
                         $atts['target'] = ! empty( $item->target )        ? $item->target        : '';
                         $atts['rel']    = ! empty( $item->xfn )                ? $item->xfn        : '';
 
                         // If item has_children add atts to a.
                         if ( $args->has_children) {
-                                $atts['href']                   = '#';
+                                //$atts['href']                   = '#';
+								$atts['href'] = ! empty( $item->url ) ? $item->url : '#';
                                 $atts['data-toggle']        = 'dropdown';
                                 $atts['class']                        = 'dropdown-toggle';
                         } else {
@@ -900,6 +908,24 @@ function openstrap_wp_head() {
 		$customcss[] = $bcss;
 	}
 	
+	$display_nav_on_mouse_click = of_get_option('display_nav_on_mouse_click');	
+	if($display_nav_on_mouse_click ==0) {
+	?>
+	<style type="text/css"> 	
+	@media (min-width: 768px) {
+	/* Required to make menu appear on mouse hover. */
+	ul.nav li.dropdown:hover > ul.dropdown-menu{
+	display: block;    
+	}
+
+	ul.nav li.dropdown > ul.dropdown-menu li.dropdown-submenu:hover > ul.dropdown-menu {
+	display: block;    
+	}
+	}
+	</style>		
+	<?php
+	}
+	
 	if(!empty($customcss)) { ?>
 	<style type="text/css" media="all"> 
 	<?php 
@@ -946,15 +972,27 @@ function openstrap_wp_footer() {
 	<![endif]-->
 	<!-- Bootstrap 3 dont have core support to multilevel menu, we need this JS to implement that -->
 	<script src="<?php echo get_template_directory_uri(); ?>/js/theme-menu.js" type="text/javascript"></script>
-	<?php
+	<script type='text/javascript'>
+		jQuery.noConflict();
+	</script>	
+	<?php 
+		$make_parent_menu_clickable = of_get_option('make_parent_menu_clickable');
+		if($make_parent_menu_clickable==1):		
+		?>
+		<script type='text/javascript'>
+			jQuery( "a.dropdown-toggle" ).on( "click", function( event ) {
+				event.preventDefault();
+				jQuery(location).attr('href', jQuery(this).attr("href"));
+			});		
+		</script>
+		<?php
+		endif;
 		//Add this piece of JS only when Slider/carousel template is used.
-		if(is_front_page() || is_page_template('page-templates/front-page-2.php')):
-		
+		if(is_front_page() || is_page_template('page-templates/front-page-2.php')):		
 		$slider_interval = (of_get_option('slider_interval') > 0) ? of_get_option('slider_interval') : 2500;;
 		$pause_on_hover = (of_get_option('pause_on_hover')=='1') ? "hover" : "none";
 		?>
-		<script type='text/javascript'>
-		jQuery.noConflict();
+		<script type='text/javascript'>		
 		jQuery(document).ready(function(){
 			jQuery('.carousel').carousel({ interval: <?php echo $slider_interval; ?>, cycle: true, wrap: true, pause:"<?php echo $pause_on_hover;?>" });	
 		});				
@@ -1022,9 +1060,9 @@ function openstrap_widget_field( $widget, $args = array(), $value ) {
 			echo '" name="' . $field_name . '" type="hidden" value="';
 			echo esc_attr( $value ) . '" />';
 			echo '<input class="media-upload-btn" id="' . $field_id;
-			echo '_btn" name="' . $field_name . '_btn" type="button" value="'. __( 'Choose', 'awakening' ) . '">';
+			echo '_btn" name="' . $field_name . '_btn" type="button" value="'. __( 'Choose', 'openstrap' ) . '">';
 			echo '<input class="media-upload-del" id="' . $field_id;
-			echo '_del" name="' . $field_name . '_del" type="button" value="'. __( 'Remove', 'awakening' ) . '">';
+			echo '_del" name="' . $field_name . '_del" type="button" value="'. __( 'Remove', 'openstrap' ) . '">';
 			break;
 		case 'text':
 		case 'hidden':
@@ -1176,14 +1214,29 @@ function openstrap_get_sidebar_cols( ) {
 
 function openstrap_get_content_cols( ) {	
 	$wide_sidebar = of_get_option('wider_sidebar'); 
+	
 	$col = (empty($wide_sidebar)) ? 9 : 8;	
 	$layout = of_get_option('page_layouts'); 
-	if($layout == "sidebar-content-sidebar" || $layout == "content-sidebar-sidebar" || $layout == "sidebar-sidebar-content") {
+	
+	if($layout=="sidebar-content" || 
+	   $layout=="content-sidebar" || 
+	   is_page_template( 'page-templates/sidebar-content.php' ) || 
+	   is_page_template( 'page-templates/content-sidebar.php' ))
+	   {			
+			$col = (empty($wide_sidebar)) ? 9 : 8;
+		}		
+	else if(is_page_template( 'page-templates/sidebar-content-sidebar.php' ) ||
+	   is_page_template( 'page-templates/content-sidebar-sidebar.php' ) ||
+	   is_page_template( 'page-templates/sidebar-sidebar-content.php' ) ||
+	   $layout == "sidebar-content-sidebar" || 
+	   $layout == "content-sidebar-sidebar" 
+	   || $layout == "sidebar-sidebar-content"
+	   ) {
 		$col = 6;
-	} else if($layout == "full-width") {
-		$col = 12;
-	}	
+	}
+
 	return $col;
 }
 
+require_once( get_template_directory() . '/inc/woocommerce-support.php' );
 ?>

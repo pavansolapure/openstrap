@@ -8,11 +8,15 @@
  */
 ?>
 
+<?php 
+	$display_post_meta_info = of_get_option('display_post_meta_info');
+?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> >
 	<header>
 		<hgroup>
 			<h2><a href="<?php the_permalink(); ?>" title="<?php echo esc_attr( sprintf( __( 'Permalink to %s', 'openstrap' ), the_title_attribute( 'echo=0' ) ) ); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
-			
+		<?php if(!empty($display_post_meta_info)):?>	
 		<div class="post-meta entry-header">
 				<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
 					<span class="sticky"><i class="icon-pushpin"></i> <span class="badge"><?php _e( 'Sticky', 'openstrap' ); ?> </span></span>
@@ -38,6 +42,8 @@
 				</span>
 			</div>				
 		</div> 
+		<?php endif;?>
+		<hr class="post-meta-hr"/>
 		</hgroup>
 	</header>
 

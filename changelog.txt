@@ -1,5 +1,22 @@
 *** Revision History ***
 ===========================
+version 1.0.9		2014-05-08
+* Added support for favicon
+* Added configuration to display post/page meta information
+* Added configuration to display post/page nav
+* Fixed escape url in social widget
+
+version 1.0.8		2014-04-30
+* Fixed minor echo statement
+* Added youtube in social widget
+
+version 1.0.7		2014-03-20
+* Added Basic Support for woocommerce
+* Updated minor defect in layout selection
+
+version 1.0.6		2014-03-01
+* Added option manage menu click and hover
+* Updated Paypal Donations form
 
 version 1.0.5		2014-02-16
 * Added option to allow expandable search in nav menu

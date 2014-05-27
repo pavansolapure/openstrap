@@ -214,13 +214,6 @@ function optionsframework_options() {
 		'type' => 'text');				
 		
 	$options[] = array(
-		'name' => __('Display Search Icon in Nav Menu', 'options_check'),
-		'desc' => __('Check to display Search in Nav Menu. Defaults to True.', 'options_check'),
-		'id' => 'display_nav_search',
-		'std' => '1',
-		'type' => 'checkbox');		
-		
-	$options[] = array(
 		'name' => __('Front Page Settings', 'options_check'),
 		'type' => 'heading');	
 		
@@ -454,6 +447,55 @@ function optionsframework_options() {
 		'id' => 'code_for_wp_footer',
 		'std' => '',
 		'type' => 'textarea');		
+		
+	$options[] = array(
+		'name' => __('Misc Settings', 'options_check'),
+		'type' => 'heading');		
+	
 
+	$options[] = array(
+		'name' => __('Set your Favicon', 'options_check'),
+		'desc' => __('Set your Favicon. Add complete url for icon image' , 'options_check'),
+		'id' => 'favicon_url',
+		'std' => '',
+		'type' => 'text');			
+		
+	$options[] = array(
+		'name' => __('Display Search Icon in Nav Menu', 'options_check'),
+		'desc' => __('Check to display Search in Nav Menu. Defaults to True.', 'options_check'),
+		'id' => 'display_nav_search',
+		'std' => '1',
+		'type' => 'checkbox');		
+		
+	$options[] = array(
+		'name' => __('Open Submenu on Mouse Click', 'options_check'),
+		'desc' => __('Check to display submenu  on Mouse Click. Default is Mouse Hoover', 'options_check'),
+		'id' => 'display_nav_on_mouse_click',
+		'std' => '0',
+		'type' => 'checkbox');			
+	
+	$options[] = array(
+		'name' => __('Make Parent Menu Clickable', 'options_check'),
+		'desc' => __('Check to make Parent  Menu Clickable. Default is false. <b style="color:red;">This feature will NOT work properly on Mobile devices. So plesae use cautiously.</b>', 'options_check'),
+		'id' => 'make_parent_menu_clickable',
+		'std' => '0',
+		'type' => 'checkbox');			
+
+	
+	$options[] = array(
+		'name' => __('Display Post Meta Information', 'options_check'),
+		'desc' => __('Check to display Post Meta Information. Defaults to True.', 'options_check'),
+		'id' => 'display_post_meta_info',
+		'std' => '1',
+		'type' => 'checkbox');		
+		
+	$options[] = array(
+		'name' => __('Display Post/Page Navigation and Category/Tags on Single Post/Page', 'options_check'),
+		'desc' => __('Check to display Post/Page Navigation and Category/Tags on Single Post/Page. Defaults to True.', 'options_check'),
+		'id' => 'display_post_page_nav',
+		'std' => '1',
+		'type' => 'checkbox');	
+		
+	
 	return $options;
 }

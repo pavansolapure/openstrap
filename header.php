@@ -24,6 +24,15 @@
 <title><?php wp_title( '|', true, 'right' ); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php
+	$favicon_url = of_get_option('favicon_url');
+	if(!empty($favicon_url)):
+	?>
+		<link rel="icon" href="<?php echo esc_url( $favicon_url );?>" type="image/x-icon" />
+		<link rel="shortcut icon" href="<?php echo esc_url( $favicon_url );?>" type="image/x-icon" />	
+	<?php
+	endif;
+?>
 <?php wp_head(); ?>
 </head>
 
@@ -62,14 +71,32 @@
 				</div>
 				<div class="pull-right"  id="header-top-container">
 					<div class="pull-right">
-					<?php 
-						wp_nav_menu( array( 'theme_location' => 'secondary', 
-											'menu_class' => 'list-inline', 
-											'depth' =>1, 
-											'container' => false, 
-											'fallback_cb' => false ) ); 
-					?>
-					</div>
+						<div class="pull-left">
+						<?php 
+							wp_nav_menu( array( 'theme_location' => 'secondary', 
+												'menu_class' => 'list-inline', 
+												'depth' =>1, 
+												'container' => false, 
+												'fallback_cb' => false ) ); 
+						?>
+						</div>
+						<?php if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) :?>
+						<div class="woocommerce-header-cart pull-right">						
+							<?php global $woocommerce; ?>
+							<a href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
+								<?php if ($woocommerce->cart->cart_contents_count == 0){
+										printf( '<i class="icon-shopping-cart"></i>', get_stylesheet_directory_uri());
+									}else{
+										printf( '<i class="icon-shopping-cart"></i>', get_stylesheet_directory_uri());
+									}
+								?>  
+							</a>
+							<a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" >
+							Your Cart : <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+						</div>
+						<?php endif;?>
+						
+					</div>		
 				</div>
 			</div>			
 		</div>	

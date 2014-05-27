@@ -1,4 +1,4 @@
-Openstrap 1.0.5
+Openstrap 1.0.9
 ===============
 The Openstrap theme for WordPress developed on top of 
 Twitter Bootstrap Framework. The theme is fully responsive and can 
@@ -53,6 +53,14 @@ Assets used in this theme and thier license
 
 *** Revision History ***
 ===========================
+
+version 1.0.7		2014-03-20
+* Added Basic Support for woocommerce
+* Updated minor defect in layout selection
+
+version 1.0.6		2014-03-01
+* Added option manage menu click and hover
+* Updated Paypal Donations form
 
 version 1.0.5		2014-02-16
 * Added option to allow expandable search in nav menu

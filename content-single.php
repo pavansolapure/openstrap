@@ -9,11 +9,15 @@
  * @since Openstrap 0.1
  */
 ?>
-
+<?php 
+	$display_post_meta_info = of_get_option('display_post_meta_info');
+	$display_post_page_nav = of_get_option('display_post_page_nav');
+?>
 <article>
 	<header class="entry-header">
 		<hgroup>
-			<h1><?php the_title(); ?></h1>			
+			<h1><?php the_title(); ?></h1>		
+			<?php if(!empty($display_post_meta_info)):?>		
 			<div class="post-meta entry-header">
 			
 				<?php if ( is_sticky() && is_home() && ! is_paged() ) : ?>
@@ -39,6 +43,8 @@
 					<a href="<?php the_permalink() ?>#comments"><?php comments_number(__('No comments', 'openstrap'),__('One comment','openstrap'),__('% comments','openstrap')); ?></a></span>
 				</div>				
 			</div> 
+		<?php endif;?>
+		<hr class="post-meta-hr"/>			
 		</hgroup>
 	</header>
 	
@@ -48,7 +54,7 @@
 	<footer class="entry-meta">					
 		<p><?php wp_link_pages(); ?></p>
 		<hr/>
-		
+		<?php if(!empty($display_post_page_nav)):?>
 		<div class="panel panel-default">
 		  <div class="panel-heading">
 		 
@@ -84,7 +90,7 @@
 			</div>				
 		  </div>
 		</div>	
-			
+		<?php endif;?>	
 		<?php get_template_part('author-box'); ?>		
 		
 		<?php comments_template( '', true ); ?>
