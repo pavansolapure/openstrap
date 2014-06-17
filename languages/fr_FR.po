@@ -1,0 +1,1426 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Openstrap v1.0.9\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2014-06-04 18:07:57+0000\n"
+"Last-Translator: mon_admin <lroche@consultant.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n>1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: French\n"
+"X-Poedit-Country: FRANCE\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: 404.php:33
+#@ openstrap
+msgid "This is somewhat embarrassing, isn&rsquo;t it?"
+msgstr "C'est embarrassant, n'est-ce pas ?"
+
+#: 404.php:37
+#@ openstrap
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+msgstr "Il semble que nous ne trouvions pas ce que vous avez demandé.  Peut-être une recherche pourrait aider."
+
+#: archive.php:46
+#, php-format
+#@ openstrap
+msgid "Daily Archives: %s"
+msgstr "Archives journalières : %s"
+
+#: archive.php:48
+#, php-format
+#@ openstrap
+msgid "Monthly Archives: %s"
+msgstr "Archives mensuelles : %s"
+
+#: archive.php:48
+#@ openstrap
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:50
+#, php-format
+#@ openstrap
+msgid "Yearly Archives: %s"
+msgstr "Archives annuelles : %s"
+
+#: archive.php:50
+#@ openstrap
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: archive.php:52
+#@ openstrap
+msgid "Archives"
+msgstr ""
+
+#: author-box.php:23
+#: author.php:71
+#, php-format
+#@ openstrap
+msgid "About %s"
+msgstr "A propos de %s"
+
+#: author-box.php:27
+#, php-format
+#@ openstrap
+msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Voir tous les articles par %s <span class=\"meta-nav\">&rarr;</span>"
+
+#: author.php:49
+#, php-format
+#@ openstrap
+msgid "Author Archives: %s"
+msgstr "Archives de l'auteur : %s"
+
+#: category.php:39
+#, php-format
+#@ openstrap
+msgid "Category Archives: %s"
+msgstr "Archives de la catégorie : %s"
+
+#: comments.php:31
+#, php-format
+#@ openstrap
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:40
+#@ openstrap
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41
+#@ openstrap
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:42
+#@ openstrap
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:51
+#@ openstrap
+msgid "Comments are closed."
+msgstr ""
+
+#: content-none.php:17
+#@ openstrap
+msgid "No posts to display"
+msgstr ""
+
+#: content-none.php:21
+#, php-format
+#@ openstrap
+msgid "Ready to publish your first post? <a href=\"%s\">Get started here</a>."
+msgstr ""
+
+#: content-none.php:28
+#@ openstrap
+msgid "Nothing Found"
+msgstr "Recherche infructueuse"
+
+#: content-none.php:32
+#@ openstrap
+msgid "Apologies, but no results were found. Perhaps searching will help find a related post."
+msgstr "Aucun résultat, ne correspond à vos critères de recherche. Vous pouvez essayez une nouvelle recherche."
+
+#: content-page.php:18
+#@ openstrap
+msgid "Pages:"
+msgstr ""
+
+#: content-page.php:21
+#: functions.php:466
+#@ openstrap
+msgid "Edit"
+msgstr ""
+
+#: content-single.php:24
+#: content.php:22
+#@ openstrap
+msgid "Sticky"
+msgstr ""
+
+#: content-single.php:28
+#: content.php:26
+#, php-format
+#@ openstrap
+msgid "<span class=\"post_date\"><i class=\"icon-calendar\"></i> %2$s by %3$s"
+msgstr "<span class=\"post_date\"><i class=\"icon-calendar\"></i> %2$s par %3$s"
+
+#: content-single.php:36
+#: content.php:34
+#: functions.php:506
+#, php-format
+#@ openstrap
+msgid "View all posts by %s"
+msgstr "Voir tous les articles par %s"
+
+#: content-single.php:43
+#: content.php:41
+#@ openstrap
+msgid "No comments"
+msgstr "Pas de commentaires"
+
+#: content-single.php:43
+#: content.php:41
+#@ openstrap
+msgid "One comment"
+msgstr "Un commentaire"
+
+#: content-single.php:43
+#: content.php:41
+#@ openstrap
+msgid "% comments"
+msgstr "% commentaires"
+
+#: content-single.php:78
+#@ openstrap
+msgid "<i class=\"icon-folder-open\"></i> &nbsp;"
+msgstr ""
+
+#: content-single.php:85
+#@ openstrap
+msgid "<i class=\"icon-tags\"></i> &nbsp;"
+msgstr ""
+
+#: content.php:18
+#, php-format
+#@ openstrap
+msgid "Permalink to %s"
+msgstr ""
+
+#: footer.php:24
+#@ openstrap
+msgid "&copy; "
+msgstr ""
+
+#: functions.php:68
+#@ openstrap
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:69
+#@ openstrap
+msgid "Secondary Menu"
+msgstr ""
+
+#: functions.php:70
+#@ openstrap
+msgid "Footer Menu"
+msgstr ""
+
+#: functions.php:146
+#@ openstrap
+msgctxt "Open Sans font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:151
+#@ openstrap
+msgctxt "Open Sans font: add new subset (greek, cyrillic, vietnamese)"
+msgid "no-subset"
+msgstr ""
+
+#: functions.php:240
+#, php-format
+#@ openstrap
+msgid "Page %s"
+msgstr ""
+
+#: functions.php:268
+#@ openstrap
+msgid "Header Right"
+msgstr ""
+
+#: functions.php:269
+#@ openstrap
+msgid "This sidebar is located on the right-hand side of header area."
+msgstr ""
+
+#: functions.php:279
+#@ openstrap
+msgid "Sidebar Right"
+msgstr ""
+
+#: functions.php:280
+#@ openstrap
+msgid "This sidebar is located on the right-hand side of each page. This is Default Side bar."
+msgstr ""
+
+#: functions.php:290
+#@ openstrap
+msgid "Sidebar Left"
+msgstr ""
+
+#: functions.php:291
+#@ openstrap
+msgid "This sidebar is located on the left-hand side of each page."
+msgstr ""
+
+#: functions.php:301
+#@ openstrap
+msgid "Footer One"
+msgstr ""
+
+#: functions.php:302
+#@ openstrap
+msgid "This sidebar is located on Footer and its First section. Occupies 4 Columns out of 12."
+msgstr ""
+
+#: functions.php:311
+#@ openstrap
+msgid "Footer Two"
+msgstr ""
+
+#: functions.php:312
+#@ openstrap
+msgid "This sidebar is located on Footer and its Second section.Occupies 4 Columns out of 12."
+msgstr ""
+
+#: functions.php:321
+#@ openstrap
+msgid "Footer Three"
+msgstr ""
+
+#: functions.php:322
+#: functions.php:333
+#@ openstrap
+msgid "This sidebar is located on Footer and its Third section. Occupies 4 Columns out of 12."
+msgstr ""
+
+#: functions.php:332
+#@ openstrap
+msgid "Footer Four"
+msgstr ""
+
+#: functions.php:346
+#@ openstrap
+msgid "Front Page Widget One"
+msgstr ""
+
+#: functions.php:347
+#@ openstrap
+msgid "This widget area is active only on frontpage and first widget."
+msgstr ""
+
+#: functions.php:356
+#@ openstrap
+msgid "Front Page Widget Two"
+msgstr ""
+
+#: functions.php:357
+#@ openstrap
+msgid "This widget area is active only on frontpage and second widget."
+msgstr ""
+
+#: functions.php:366
+#@ openstrap
+msgid "Front Page Widget Three"
+msgstr ""
+
+#: functions.php:367
+#@ openstrap
+msgid "This widget area is active only on frontpage and third widget."
+msgstr ""
+
+#: functions.php:377
+#@ openstrap
+msgid "Front Page Widget Four"
+msgstr ""
+
+#: functions.php:378
+#@ openstrap
+msgid "This widget area is active only on frontpage and fourth widget."
+msgstr ""
+
+#: functions.php:429
+#@ openstrap
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:429
+#@ openstrap
+msgid "(Edit)"
+msgstr ""
+
+#: functions.php:449
+#@ openstrap
+msgid "Post author"
+msgstr ""
+
+#. translators: 1: date, 2: time
+#: functions.php:455
+#, php-format
+#@ openstrap
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: functions.php:460
+#@ openstrap
+msgid "Your comment is awaiting moderation."
+msgstr "Votre commentaire est en attente de modération."
+
+#: functions.php:470
+#@ openstrap
+msgid "Reply"
+msgstr ""
+
+#: functions.php:492
+#: functions.php:495
+#@ openstrap
+msgid ", "
+msgstr ""
+
+#: functions.php:512
+#, php-format
+#@ openstrap
+msgid "This entry was posted in %1$s and tagged %2$s on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: functions.php:514
+#, php-format
+#@ openstrap
+msgid "This entry was posted in %1$s on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: functions.php:516
+#, php-format
+#@ openstrap
+msgid "This entry was posted on %3$s<span class=\"by-author\"> by %4$s</span>."
+msgstr ""
+
+#: functions.php:1090
+#@ openstrap
+msgid "Choose"
+msgstr ""
+
+#: functions.php:1092
+#: inc/admin/options-media-uploader.php:56
+#: inc/admin/options-media-uploader.php:112
+#@ openstrap
+#@ options_framework_theme
+msgid "Remove"
+msgstr ""
+
+#: functions.php:1186
+#@ openstrap
+msgid "Thumbnail"
+msgstr ""
+
+#: functions.php:1188
+#@ openstrap
+msgid "Medium"
+msgstr ""
+
+#: functions.php:1190
+#: inc/widgets/openstrap-social-box-widget.php:94
+#@ openstrap
+msgid "Large"
+msgstr ""
+
+#: functions.php:1192
+#@ openstrap
+msgid "Full"
+msgstr ""
+
+#: functions.php:1194
+#@ openstrap
+msgid "Custom"
+msgstr ""
+
+#: functions.php:1196
+#@ openstrap
+msgid "None"
+msgstr ""
+
+#: header.php:95
+#, php-format
+#@ woothemes
+msgid "%d item"
+msgid_plural "%d items"
+msgstr[0] ""
+msgstr[1] ""
+
+#: header.php:145
+#: header.php:165
+#: inc/woocommerce-support.php:92
+#: searchform.php:14
+#: searchform.php:16
+#@ openstrap
+msgid "Search"
+msgstr "Rechercher"
+
+#: inc/admin/options-framework.php:173
+#: inc/admin/options-framework.php:389
+#@ options_framework_theme
+msgid "Theme Options"
+msgstr ""
+
+#: inc/admin/options-framework.php:205
+#@ options_framework_theme
+msgid "Clear"
+msgstr ""
+
+#: inc/admin/options-framework.php:206
+#: inc/widgets/openstrap-front-page-text.php:88
+#: inc/widgets/openstrap-social-box-widget.php:92
+#@ options_framework_theme
+#@ openstrap
+msgid "Default"
+msgstr ""
+
+#: inc/admin/options-framework.php:207
+#@ options_framework_theme
+msgid "Select Color"
+msgstr ""
+
+#: inc/admin/options-framework.php:252
+#@ options_framework_theme
+msgid "Save Options"
+msgstr ""
+
+#: inc/admin/options-framework.php:253
+#@ options_framework_theme
+msgid "Restore Defaults"
+msgstr ""
+
+#: inc/admin/options-framework.php:253
+#@ options_framework_theme
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: inc/admin/options-framework.php:285
+#@ options_framework_theme
+msgid "Default options restored."
+msgstr ""
+
+#: inc/admin/options-framework.php:339
+#@ options_framework_theme
+msgid "Options saved."
+msgstr ""
+
+#: inc/admin/options-media-uploader.php:51
+#@ options_framework_theme
+msgid "No file chosen"
+msgstr ""
+
+#: inc/admin/options-media-uploader.php:54
+#: inc/admin/options-media-uploader.php:111
+#@ options_framework_theme
+msgid "Upload"
+msgstr ""
+
+#: inc/admin/options-media-uploader.php:59
+#@ options_framework_theme
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: inc/admin/options-media-uploader.php:83
+#@ options_framework_theme
+msgid "View File"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:232
+#@ options_framework_theme
+msgid "No Repeat"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:233
+#@ options_framework_theme
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:234
+#@ options_framework_theme
+msgid "Repeat Vertically"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:235
+#@ options_framework_theme
+msgid "Repeat All"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:248
+#@ options_framework_theme
+msgid "Top Left"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:249
+#@ options_framework_theme
+msgid "Top Center"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:250
+#@ options_framework_theme
+msgid "Top Right"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:251
+#@ options_framework_theme
+msgid "Middle Left"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:252
+#@ options_framework_theme
+msgid "Middle Center"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:253
+#@ options_framework_theme
+msgid "Middle Right"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:254
+#@ options_framework_theme
+msgid "Bottom Left"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:255
+#@ options_framework_theme
+msgid "Bottom Center"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:256
+#@ options_framework_theme
+msgid "Bottom Right"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:269
+#@ options_framework_theme
+msgid "Scroll Normally"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:270
+#@ options_framework_theme
+msgid "Fixed in Place"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:344
+#@ options_framework_theme
+msgid "Normal"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:345
+#@ options_framework_theme
+msgid "Italic"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:346
+#@ options_framework_theme
+msgid "Bold"
+msgstr ""
+
+#: inc/admin/options-sanitize.php:347
+#@ options_framework_theme
+msgid "Bold Italic"
+msgstr ""
+
+#: inc/options.php:32
+#@ options_check
+msgid "Three"
+msgstr ""
+
+#: inc/options.php:33
+#@ options_check
+msgid "Four"
+msgstr ""
+
+#: inc/options.php:37
+#@ options_check
+msgid "Boxed"
+msgstr ""
+
+#: inc/options.php:38
+#@ options_check
+msgid "Wide"
+msgstr ""
+
+#: inc/options.php:42
+#@ options_check
+msgid "Yes"
+msgstr ""
+
+#: inc/options.php:43
+#@ options_check
+msgid "No"
+msgstr ""
+
+#: inc/options.php:48
+#@ options_check
+msgid "French Toast"
+msgstr ""
+
+#: inc/options.php:49
+#@ options_check
+msgid "Pancake"
+msgstr ""
+
+#: inc/options.php:50
+#@ options_check
+msgid "Omelette"
+msgstr ""
+
+#: inc/options.php:51
+#@ options_check
+msgid "Crepe"
+msgstr ""
+
+#: inc/options.php:52
+#@ options_check
+msgid "Waffle"
+msgstr ""
+
+#: inc/options.php:114
+#@ options_check
+msgid "Basic Settings"
+msgstr ""
+
+#: inc/options.php:131
+#@ options_check
+msgid "Header Background"
+msgstr ""
+
+#: inc/options.php:132
+#@ options_check
+msgid "Change the header background CSS. Recommended Sizes 1216x105"
+msgstr ""
+
+#: inc/options.php:138
+#@ options_check
+msgid "Body Background"
+msgstr ""
+
+#: inc/options.php:139
+#@ options_check
+msgid "Change the body background CSS."
+msgstr ""
+
+#: inc/options.php:145
+#@ options_check
+msgid "Site Logo"
+msgstr ""
+
+#: inc/options.php:146
+#@ options_check
+msgid "If set this will be used as your sites logo. Recommended Sizes 200x99, 250x99"
+msgstr ""
+
+#: inc/options.php:151
+#@ options_check
+msgid "Theme Layout"
+msgstr ""
+
+#: inc/options.php:152
+#@ options_check
+msgid "This option allows you to set theme layout Boxed or Full Width/Wide."
+msgstr ""
+
+#: inc/options.php:175
+#@ options_check
+msgid "Wider Sidebar"
+msgstr ""
+
+#: inc/options.php:176
+#@ options_check
+msgid "If this option is set to Yes, the sidebar will be little wider. This setting is applicable on 2 column layout only."
+msgstr ""
+
+#: inc/options.php:186
+#@ options_check
+msgid "Widget Areas in Extended Footer"
+msgstr ""
+
+#: inc/options.php:187
+#@ options_check
+msgid "This option allows you to set how many widget areas you want in footer. Default is 3."
+msgstr ""
+
+#: inc/options.php:196
+#@ options_check
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/options.php:197
+#@ options_check
+msgid "Your sites copyright statement."
+msgstr ""
+
+#: inc/options.php:203
+#@ options_check
+msgid "Header Contact Phone"
+msgstr ""
+
+#: inc/options.php:204
+#@ options_check
+msgid "Your contact phone will be displayed on header top left area."
+msgstr ""
+
+#: inc/options.php:210
+#@ options_check
+msgid "Header Contact Mail"
+msgstr ""
+
+#: inc/options.php:211
+#@ options_check
+msgid "Your contact mail will be displayed on header top left area."
+msgstr ""
+
+#: inc/options.php:217
+#@ options_check
+msgid "Front Page Settings"
+msgstr ""
+
+#: inc/options.php:221
+#@ options_check
+msgid "Settings for Slider on Home page. (This is displayed on Front Page template with Slider Only.)"
+msgstr ""
+
+#: inc/options.php:222
+#@ options_check
+msgid "Check to display Slider. Defaults to False."
+msgstr ""
+
+#: inc/options.php:228
+#@ options_check
+msgid "Slider Speed"
+msgstr ""
+
+#: inc/options.php:229
+#@ options_check
+msgid "Set Slider Interval (in miliseconds)."
+msgstr ""
+
+#: inc/options.php:235
+#@ options_check
+msgid "Slider Pause on Mouse Hover"
+msgstr ""
+
+#: inc/options.php:236
+#@ options_check
+msgid "Check if you want Slider to pause on mouse hover."
+msgstr ""
+
+#: inc/options.php:242
+#@ options_check
+msgid "Slider Image 1"
+msgstr ""
+
+#: inc/options.php:243
+#: inc/options.php:273
+#: inc/options.php:303
+#: inc/options.php:333
+#@ options_check
+msgid "Set image for slider. Preferred size 1170x500"
+msgstr ""
+
+#: inc/options.php:248
+#@ options_check
+msgid "Heading of Image 1."
+msgstr ""
+
+#: inc/options.php:254
+#@ options_check
+msgid "Caption of Image 1."
+msgstr ""
+
+#: inc/options.php:260
+#: inc/options.php:290
+#: inc/options.php:320
+#: inc/options.php:350
+#@ options_check
+msgid "Set title for Button."
+msgstr ""
+
+#: inc/options.php:266
+#: inc/options.php:296
+#: inc/options.php:326
+#: inc/options.php:356
+#@ options_check
+msgid "Link for Button"
+msgstr ""
+
+#: inc/options.php:272
+#@ options_check
+msgid "Slider Image 2"
+msgstr ""
+
+#: inc/options.php:278
+#@ options_check
+msgid "Heading of Image 2."
+msgstr ""
+
+#: inc/options.php:284
+#@ options_check
+msgid "Caption of Image 2."
+msgstr ""
+
+#: inc/options.php:302
+#@ options_check
+msgid "Slider Image 3"
+msgstr ""
+
+#: inc/options.php:308
+#@ options_check
+msgid "Heading of Image 3."
+msgstr ""
+
+#: inc/options.php:314
+#@ options_check
+msgid "Caption of Image 3."
+msgstr ""
+
+#: inc/options.php:332
+#@ options_check
+msgid "Slider Image 4"
+msgstr ""
+
+#: inc/options.php:338
+#@ options_check
+msgid "Heading of Image 4."
+msgstr ""
+
+#: inc/options.php:344
+#@ options_check
+msgid "Caption of Image 4."
+msgstr ""
+
+#: inc/options.php:362
+#@ options_check
+msgid "Blurb Settings - Following section allows you to configure your blurb on front page."
+msgstr ""
+
+#: inc/options.php:363
+#@ options_check
+msgid "<b>Following section will allow you to set text and button settings</b>"
+msgstr ""
+
+#: inc/options.php:368
+#@ options_check
+msgid "Check to display Blurb on home page."
+msgstr ""
+
+#: inc/options.php:375
+#@ options_check
+msgid "Enter text here to be displayed in Blurb Heading."
+msgstr ""
+
+#: inc/options.php:382
+#@ options_check
+msgid "Enter text here to be displayed in Blurb Section."
+msgstr ""
+
+#: inc/options.php:389
+#@ options_check
+msgid "Check to display Blurb Button."
+msgstr ""
+
+#: inc/options.php:396
+#@ options_check
+msgid "Set title for Blurb Button."
+msgstr ""
+
+#: inc/options.php:403
+#@ options_check
+msgid "Link for Blurb Button"
+msgstr ""
+
+#: inc/options.php:409
+#@ options_check
+msgid "Widget Areas in Front Page"
+msgstr ""
+
+#: inc/options.php:410
+#@ options_check
+msgid "This option allows you to set how many widget areas you want in Frontpage. Default is 3."
+msgstr ""
+
+#: inc/options.php:420
+#@ options_check
+msgid "Custom Codes"
+msgstr ""
+
+#: inc/options.php:424
+#@ options_check
+msgid "Code Setting"
+msgstr ""
+
+#: inc/options.php:425
+#@ options_check
+msgid "Check to add following CSS in Header Section"
+msgstr ""
+
+#: inc/options.php:432
+#@ options_check
+msgid "Code to add in header."
+msgstr ""
+
+#: inc/options.php:439
+#@ options_check
+msgid "Check to add following code in Footer section"
+msgstr ""
+
+#: inc/options.php:446
+#@ options_check
+msgid "Code to add in footer."
+msgstr ""
+
+#: inc/options.php:452
+#@ options_check
+msgid "Misc Settings"
+msgstr ""
+
+#: inc/options.php:457
+#@ options_check
+msgid "Set your Favicon"
+msgstr ""
+
+#: inc/options.php:458
+#@ options_check
+msgid "Set your Favicon. Add complete url for icon image"
+msgstr ""
+
+#: inc/options.php:464
+#@ options_check
+msgid "Display Search Icon in Nav Menu"
+msgstr ""
+
+#: inc/options.php:465
+#@ options_check
+msgid "Check to display Search in Nav Menu. Defaults to True."
+msgstr ""
+
+#: inc/options.php:471
+#@ options_check
+msgid "Open Submenu on Mouse Click"
+msgstr ""
+
+#: inc/options.php:472
+#@ options_check
+msgid "Check to display submenu  on Mouse Click. Default is Mouse Hoover"
+msgstr ""
+
+#: inc/options.php:478
+#@ options_check
+msgid "Make Parent Menu Clickable"
+msgstr ""
+
+#: inc/options.php:479
+#@ options_check
+msgid "Check to make Parent  Menu Clickable. Default is false. <b style=\"color:red;\">This feature will NOT work properly on Mobile devices. So plesae use cautiously.</b>"
+msgstr ""
+
+#: inc/options.php:486
+#@ options_check
+msgid "Display Post Meta Information"
+msgstr ""
+
+#: inc/options.php:487
+#@ options_check
+msgid "Check to display Post Meta Information. Defaults to True."
+msgstr ""
+
+#: inc/options.php:493
+#@ options_check
+msgid "Display Post/Page Navigation and Category/Tags on Single Post/Page"
+msgstr ""
+
+#: inc/options.php:494
+#@ options_check
+msgid "Check to display Post/Page Navigation and Category/Tags on Single Post/Page. Defaults to True."
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:18
+#@ feedburner
+msgid "Enable Feedburner form on Your Website."
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:24
+#@ openstrap
+msgid "(Openstrap) Feedburner"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:41
+#@ openstrap
+msgid "Feedburner Id:"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:43
+#@ openstrap
+msgid "(e.g: opencodez) "
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:45
+#@ openstrap
+msgid "Title Text:"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:47
+#@ openstrap
+msgid "(e.g: Email Newsletter) "
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:49
+#@ openstrap
+msgid "Sub Text:"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:51
+#@ openstrap
+msgid "(e.g: Sign up to receive email updates and to hear what's going on with our company!)"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:54
+#@ openstrap
+msgid "Style: "
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:57
+#@ openstrap
+msgid "Dark"
+msgstr ""
+
+#: inc/widgets/openstrap-feedburner-widget.php:59
+#@ openstrap
+msgid "Light"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:18
+#@ openstrap
+msgid "Front Paget Text for Marketing."
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:24
+#@ openstrap
+msgid "(Openstrap) Front Page Text"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:47
+#: inc/widgets/openstrap-social-box-widget.php:55
+#@ openstrap
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:48
+#@ openstrap
+msgid "Image:"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:50
+#@ openstrap
+msgid "Image Size:"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:56
+#@ openstrap
+msgid "Headline:"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:57
+#@ openstrap
+msgid "Tagline:"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:58
+#@ openstrap
+msgid "Action URL:"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:61
+#@ openstrap
+msgid "Action Label:"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:64
+#@ openstrap
+msgid "Alignment: "
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:67
+#@ openstrap
+msgid "Left"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:69
+#@ openstrap
+msgid "Center"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:71
+#@ openstrap
+msgid "Right"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:75
+#@ openstrap
+msgid "Action Button: "
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:78
+#@ openstrap
+msgid "Primary"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:80
+#@ openstrap
+msgid "Info"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:82
+#@ openstrap
+msgid "Warning"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:84
+#@ openstrap
+msgid "Danger"
+msgstr ""
+
+#: inc/widgets/openstrap-front-page-text.php:86
+#@ openstrap
+msgid "Success"
+msgstr ""
+
+#: inc/widgets/openstrap-google-cse-widget.php:18
+#@ openstrap
+msgid "Enable Google Custom Search on Your Website."
+msgstr ""
+
+#: inc/widgets/openstrap-google-cse-widget.php:24
+#@ openstrap
+msgid "(Openstrap) Google Custom Search"
+msgstr ""
+
+#: inc/widgets/openstrap-google-cse-widget.php:39
+#@ openstrap
+msgid "Search Engine Id:"
+msgstr ""
+
+#: inc/widgets/openstrap-google-cse-widget.php:43
+#@ openstrap
+msgid "Results Page URI:"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:18
+#@ openstrap
+msgid "Enable Social Icon Box for your site."
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:24
+#@ openstrap
+msgid "(Openstrap) Socal Icon Box"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:58
+#@ openstrap
+msgid "Display Facebook Icon :"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:59
+#@ openstrap
+msgid "Facebook Profile:"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:62
+#@ openstrap
+msgid "Display Twitter Icon :"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:63
+#@ openstrap
+msgid "Twitter Profile:"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:66
+#@ openstrap
+msgid "Display Google+ Icon :"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:67
+#@ openstrap
+msgid "Google+ Profile:"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:70
+#@ openstrap
+msgid "Display LinkedIn Icon :"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:71
+#@ openstrap
+msgid "LinkedIn Profile:"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:74
+#@ openstrap
+msgid "Display Pinterest Icon :"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:75
+#@ openstrap
+msgid "LinkedIn Pinterest:"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:78
+#@ openstrap
+msgid "Display RSS Icon :"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:79
+#@ openstrap
+msgid "LinkedIn RSS:"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:82
+#@ openstrap
+msgid "Display Youtube Icon :"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:83
+#@ openstrap
+msgid "Youtube Profile:"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:87
+#@ openstrap
+msgid "Select Style: "
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:90
+#@ openstrap
+msgid "Small"
+msgstr ""
+
+#: inc/widgets/openstrap-social-box-widget.php:96
+#@ openstrap
+msgid "Extra Large"
+msgstr ""
+
+#: inc/woocommerce-support.php:11
+#@ openstrap
+msgid "Shop Page Sidebar"
+msgstr ""
+
+#: inc/woocommerce-support.php:12
+#@ openstrap
+msgid "This sidebar is located on the right-hand side of Shop Page."
+msgstr ""
+
+#: inc/woocommerce-support.php:21
+#@ openstrap
+msgid "Single Product Sidebar"
+msgstr ""
+
+#: inc/woocommerce-support.php:22
+#@ openstrap
+msgid "This sidebar is located on the right-hand side of Single Product Page."
+msgstr ""
+
+#: inc/woocommerce-support.php:89
+#@ openstrap
+msgid "Search Products.."
+msgstr ""
+
+#: page-templates/content-sidebar-sidebar.php:20
+#: page-templates/content-sidebar.php:23
+#: page-templates/full-width.php:25
+#: page-templates/sidebar-content-sidebar.php:22
+#: page-templates/sidebar-content.php:24
+#: page-templates/sidebar-sidebar-content.php:22
+#@ openstrap
+msgid "No posts."
+msgstr ""
+
+#: page-templates/content-sidebar-sidebar.php:21
+#: page-templates/content-sidebar.php:24
+#: page-templates/full-width.php:26
+#: page-templates/sidebar-content-sidebar.php:23
+#: page-templates/sidebar-content.php:25
+#: page-templates/sidebar-sidebar-content.php:23
+#@ openstrap
+msgid "Sorry about this, I couldn't seem to find what you were looking for."
+msgstr ""
+
+#: sidebar-left.php:20
+#: sidebar-product.php:11
+#: sidebar-shop.php:11
+#: sidebar.php:16
+#@ openstrap
+msgid "No widgets found."
+msgstr ""
+
+#: sidebar-left.php:21
+#: sidebar-product.php:12
+#: sidebar-shop.php:12
+#: sidebar.php:17
+#, php-format
+#@ openstrap
+msgid "It seems you don't have any widgets in your sidebar! Would you like to %s now?"
+msgstr ""
+
+#: tag.php:37
+#, php-format
+#@ openstrap
+msgid "Tag Archives: %s"
+msgstr ""
+
+#: comments.php:63
+#@ openstrap
+msgid "Speak Your Mind"
+msgstr "Exprimez-vous "
+
+#: comments.php:71
+#@ openstrap
+msgid "Name"
+msgstr "Nom"
+
+#: comments.php:72
+#@ openstrap
+msgid "Enter your Name"
+msgstr "Saisissez votre nom"
+
+#: comments.php:80
+#@ openstrap
+msgid "Email"
+msgstr "E-Mail"
+
+#: comments.php:81
+#@ openstrap
+msgid "Enter your Email"
+msgstr "Saisissez votre e-mail"
+
+#: comments.php:89
+#@ openstrap
+msgid "Website"
+msgstr "Site web"
+
+#: comments.php:90
+#@ openstrap
+msgid "Enter your Website (Optional)"
+msgstr "Saisissez votre site web (optionnel)"
+
+#: comments.php:100
+#@ openstrap
+msgid "Comment"
+msgstr "Commentaire"
+
+#: comments.php:106
+#@ openstrap
+msgid "You can use these tags: <code>"
+msgstr "Vous pouvez utiliser ces tags : <code>"
+

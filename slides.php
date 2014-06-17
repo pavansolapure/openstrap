@@ -56,7 +56,7 @@
           <div class="container">
             <div class="carousel-caption">
 			  <?php if(isset($heading_1)): ?>	
-              <h1><?php echo $heading_1;?></h1>
+              <h2><?php echo $heading_1;?></h2>
 			  <?php endif;?>
 			  <?php if(isset($caption_1)): ?>	
               <p><?php echo $caption_1; ?></p>
@@ -75,7 +75,7 @@
           <div class="container">
             <div class="carousel-caption">
 			  <?php if(isset($heading_2)): ?>	
-              <h1><?php echo $heading_2;?></h1>
+              <h2><?php echo $heading_2;?></h2>
 			  <?php endif;?>
 			  <?php if(isset($caption_2)): ?>	
               <p><?php echo $caption_2; ?></p>
@@ -94,7 +94,7 @@
           <div class="container">
             <div class="carousel-caption">
 			  <?php if(isset($heading_3)): ?>	
-              <h1><?php echo $heading_3;?></h1>
+              <h2><?php echo $heading_3;?></h2>
 			  <?php endif;?>
 			  <?php if(isset($caption_3)): ?>	
               <p><?php echo $caption_3; ?></p>
@@ -113,7 +113,7 @@
           <div class="container">
             <div class="carousel-caption">
 			  <?php if(isset($heading_4)): ?>	
-              <h1><?php echo $heading_4;?></h1>
+              <h2><?php echo $heading_4;?></h2>
 			  <?php endif;?>
 			  <?php if(isset($caption_4)): ?>	
               <p><?php echo $caption_4; ?></p>

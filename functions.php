@@ -971,7 +971,32 @@ function openstrap_wp_footer() {
 	<script src="<?php echo get_template_directory_uri(); ?>/assets/js/respond.min.js" type="text/javascript"></script>
 	<![endif]-->
 	<!-- Bootstrap 3 dont have core support to multilevel menu, we need this JS to implement that -->
-	<script src="<?php echo get_template_directory_uri(); ?>/js/theme-menu.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	( function( $ ) {
+	$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
+		// Avoid following the href location when clicking
+		event.preventDefault(); 
+		// Avoid having the menu to close when clicking
+		event.stopPropagation(); 
+		// If a menu is already open we close it
+		//$('ul.dropdown-menu [data-toggle=dropdown]').parent().removeClass('open');
+		// opening the one you clicked on
+		//$(this).parent().addClass('open');
+		$(this).parent().toggleClass('open');
+
+		var menu = $(this).parent().find("ul");
+		var menupos = menu.offset();
+	  
+		if ((menupos.left + menu.width()) + 30 > $(window).width()) {
+			var newpos = - menu.width();      
+		} else {
+			var newpos = $(this).parent().width();
+		}
+		menu.css({ left:newpos });
+
+	});
+} )( jQuery );
+</script>
 	<script type='text/javascript'>
 		jQuery.noConflict();
 	</script>	
@@ -1025,9 +1050,11 @@ function openstrap_custom_excerpt_length($length) {
 add_filter('excerpt_length', 'openstrap_custom_excerpt_length');
 
 
-function openstrap_get_branding() {	
-	$note = "<span class=\"brand-note\"> | Design by <a href=\"http://www.opencodez.com/\" target=\"_blank\">Opencodez Themes</a></span>";
-	return $note;
+if ( ! function_exists('openstrap_get_branding')){	
+	function openstrap_get_branding() {	
+		$note = "<span class=\"brand-note\"> | Design by <a href=\"http://www.opencodez.com/\" target=\"_blank\">Opencodez Themes</a></span>";
+		return $note;
+	}
 }
 
 
