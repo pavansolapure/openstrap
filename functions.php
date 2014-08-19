@@ -1030,7 +1030,7 @@ add_action( 'wp_footer', 'openstrap_wp_footer',100);
 add_filter('the_excerpt','openstrap_excerpt');
 function openstrap_excerpt(){
 	global $post;
-	$link='<span class="readmore"><a href="'.get_permalink().'" > Continue reading &rarr;</a></span>';
+	$link='<span class="readmore"><a href="'.get_permalink().'" >'. __('&nbsp;Continue reading &rarr;', 'openstrap').'</a></span>';
 	$excerpt=get_the_excerpt();		
 	if ( preg_match('/<!--more(.*?)?-->/', $post->post_content) ) {	
 		echo $excerpt.$link;
@@ -1040,7 +1040,7 @@ function openstrap_excerpt(){
 }
 
 function openstrap_excerpt_read_more($text) {
-   return '  <span><a href="'.get_permalink().'" class="readmore">Continue reading &rarr;</a></span>';
+   return '  <span><a href="'.get_permalink().'" class="readmore">'. __('&nbsp;Continue reading &rarr;', 'openstrap').'</a></span>';
 }
 add_filter('excerpt_more', 'openstrap_excerpt_read_more');
 
