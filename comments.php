@@ -60,7 +60,7 @@ if ( post_password_required() )
 	$req = get_option( 'require_name_email' );
 	$aria_req = ( $req ? " aria-required='true'" : '' );
 	
-	$comment_args = array( 'title_reply'=>'Speak Your Mind',
+	$comment_args = array( 'title_reply'=>__('Speak Your Mind', 'openstrap'),
 
 	'fields' => apply_filters( 'comment_form_default_fields', 
 				array(
@@ -68,8 +68,8 @@ if ( post_password_required() )
 				'author' => '<div class="form-group">
 								<div class="row">
 								<div class="col-md-7 col-xs-8">	
-								<label class="control-label" for="focusedInput">Name ' . ($req ? '<span>*</span>' : '' ). '</label>									
-								<input class="form-control" id="focusedInput" type="text" name="author" placeholder="Enter your Name" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . '>
+								<label class="control-label" for="focusedInput">'. __('Name', 'openstrap') . ($req ? '<span>*</span>' : '' ). '</label>									
+								<input class="form-control" id="focusedInput" type="text" name="author" placeholder="'.__('Enter your Name', 'openstrap') .'" value="' . esc_attr( $commenter['comment_author'] ) . '"' . $aria_req . '>
 								</div>
 								</div>												
 							 </div>', 		
@@ -77,8 +77,8 @@ if ( post_password_required() )
 				'email' => '<div class="form-group">
 								<div class="row">
 								<div class="col-md-7 col-xs-8">	
-								<label class="control-label" for="focusedInput">Email ' . ($req ? '<span>*</span>' : '' ). '</label>
-								<input class="form-control" id="focusedInput" type="text" name="email" placeholder="Enter your Email" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . '>	
+								<label class="control-label" for="focusedInput">'.__('Email', 'openstrap') . ($req ? '<span>*</span>' : '' ). '</label>
+								<input class="form-control" id="focusedInput" type="text" name="email" placeholder="'.__('Enter your Email', 'openstrap').'" value="' . esc_attr( $commenter['comment_author_email'] ) . '"' . $aria_req . '>	
 								</div>
 								</div>	
 							</div>', 		
@@ -86,8 +86,8 @@ if ( post_password_required() )
 				'url' => '<div class="form-group">
 								<div class="row">
 								<div class="col-md-7 col-xs-8">					
-								<label class="control-label" for="focusedInput">Website ' .  '</label>
-								<input class="form-control" id="focusedInput" type="text" name="url" placeholder="Enter your Website (Optional)" value="' . esc_attr( $commenter['comment_author_url'] ) . '"' . $aria_req . '>	
+								<label class="control-label" for="focusedInput">'. __('Website', 'openstrap') .  '</label>
+								<input class="form-control" id="focusedInput" type="text" name="url" placeholder="' . __('Enter your Website (Optional)', 'openstrap') .'" value="' . esc_attr( $commenter['comment_author_url'] ) . '"' . $aria_req . '>	
 								</div>
 								</div>									
 							</div>', 	
@@ -97,13 +97,13 @@ if ( post_password_required() )
 		'comment_field' => '<div class="form-group">
 							<div class="row">
 							<div class="col-md-11 col-xs-10">		
-							<label class="control-label" for="focusedInput">Comment ' .  '</label>
+							<label class="control-label" for="focusedInput">'. __('Comment', 'openstrap') .  '</label>
 							<textarea class="form-control" rows="6" id="textArea" name="comment"></textarea>			
 							</div>
 							</div>								
 							</div>',	
 
-		'comment_notes_after' => '<div class="row"><div class="col-md-11 col-xs-10"><span class="help-block"><pre><strong>XHTML:</strong> You can use these tags: <code>'. allowed_tags() .'</code></pre></span></div></div>',
+		'comment_notes_after' => '<div class="row"><div class="col-md-11 col-xs-10"><span class="help-block"><pre><strong>XHTML:</strong>'. __('You can use these tags: <code>', 'openstrap'). allowed_tags() .'</code></pre></span></div></div>',
 
 	);
 ?>

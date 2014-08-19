@@ -1,0 +1,31 @@
+/* Add any theme specific customization here if you need on top of bootstrap.css */
+
+/* Submit Button in Comment as per theme color */
+input:hover[type="submit"]{
+color: #ffffff;
+background-color: #1990d5;
+border-color: #1684c2;
+}
+
+input[type="submit"] {
+color: #ffffff;
+background-color: #2fa4e7;
+border-color: #2fa4e7;
+}
+
+#header-top {
+	background-color: #022f5a;		
+	border-bottom: 1px solid #022241;
+}
+
+#header-top a {
+color: #fff;
+}
+
+#header-top a:hover, a:focus {
+color: #2fa4e7;
+}
+
+.popular-posts ul li:before, .widget_categories ul li:before, .widget_recent_entries ul li:before {
+color: #2fa4e7;
+}

@@ -104,7 +104,7 @@
 		<div class="header-body">		
 			<div class="container">
 				 <div class="row logo-row">
-				  <div class="col-md-4 pull-left">
+				  <div class="col-md-8 pull-left">
 					<?php if ( $site_logo != '' ) : ?>
 					<a href="<?php echo esc_url( home_url( '/' )); ?>"><img src="<?php echo esc_url($site_logo); ?>" alt="<?php bloginfo('description'); ?>" class="img-responsive" /></a>
 					<?php elseif($site_logo == '' || !isset($site_logo)): ?>
@@ -112,7 +112,7 @@
 					<small><?php bloginfo( 'description' ); ?></small>
 					<?php endif; ?>					
 				  </div>	  
-				  <div class="col-md-8 hidden-xs">
+				  <div class="col-md-4 hidden-xs">
 					<div class="pull-right">
 						<?php if ( is_active_sidebar( 'openstrap_header_right' ) ) : ?>
 							<?php dynamic_sidebar( 'openstrap_header_right' ); ?>	
