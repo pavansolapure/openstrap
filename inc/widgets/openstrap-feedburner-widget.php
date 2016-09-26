@@ -15,7 +15,7 @@ class openstrap_feedburner_subscription_widget extends WP_Widget {
          public function __construct() {
 
 			/* Widget settings. */
-			$widget_ops = array( 'classname' => 'feedburner', 'description' => __('Enable Feedburner form on Your Website.', 'feedburner') );
+			$widget_ops = array( 'classname' => 'feedburner', 'description' => __('Enable Feedburner form on Your Website.', 'openstrap') );
 
 			/* Widget control settings. */
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-feedburner' );

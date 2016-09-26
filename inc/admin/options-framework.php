@@ -238,7 +238,7 @@ function optionsframework_page() {
 	settings_errors(); ?>
 
 	<div id="optionsframework-wrap" class="wrap">
-    <?php screen_icon( 'themes' ); ?>
+    <?php //screen_icon( 'themes' );  // Not supported 3.8 Onwards ?>
     <h2 class="nav-tab-wrapper">
         <?php echo optionsframework_tabs(); ?>
     </h2>

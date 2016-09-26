@@ -21,7 +21,7 @@
 		 */
 			get_sidebar( 'footer' );		
 			$copyrighttxt = of_get_option('copyright_text');
-			$copyrighttxt = ! empty($copyrighttxt) ? $copyrighttxt : __('&copy; ', 'openstrap') . __(date('Y')) . sprintf(' <a href="%1$s" title="%2$s" rel="home">%3$s</a>', esc_url(home_url( '/' )), get_bloginfo( 'name' ), get_bloginfo( 'name' ));
+			$copyrighttxt = ! empty($copyrighttxt) ? $copyrighttxt : __('&copy; ', 'openstrap') . date('Y') . sprintf(' <a href="%1$s" title="%2$s" rel="home">%3$s</a>', esc_url(home_url( '/' )), get_bloginfo( 'name' ), get_bloginfo( 'name' ));
 			$d=sprintf('<a href="%1$s" title="%2$s" rel="home">%3$s</a>', esc_url(home_url( '/' )), get_bloginfo( 'name' ), get_bloginfo( 'name' ));			
 		?>
 <div id="footer">

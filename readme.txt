@@ -1,4 +1,4 @@
-Openstrap 1.0.9
+Openstrap 2.0.0
 ===============
 The Openstrap theme for WordPress developed on top of 
 Twitter Bootstrap Framework. The theme is fully responsive and can 
@@ -17,11 +17,11 @@ For documentations and user guides,
 visit http://www.opencodez.com/free-themes/openstrap
 ----------------------------------------------------------------------
 For support, 
-visit http://www.opencodez.com/contact
+visit http://www.opencodez.com/support
 
 
 
-Assets used in this theme and thier license
+Assets used in this theme and their license
 =============================================
 
 /**
@@ -53,6 +53,10 @@ Assets used in this theme and thier license
 
 *** Revision History ***
 ===========================
+
+version 2.0.0		2016-09-03
+* Removed Customization Buying Option from Admin Panel, as taking payment for customization caused inconvinience few times.
+
 
 version 1.0.7		2014-03-20
 * Added Basic Support for woocommerce
