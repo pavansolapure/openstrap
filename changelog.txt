@@ -1,5 +1,8 @@
 *** Revision History ***
 ===========================
+version 2.0.1		2017-09-29
+* Fixed Paypal Donation Button
+
 version 1.0.9		2014-05-08
 * Added support for favicon
 * Added configuration to display post/page meta information
