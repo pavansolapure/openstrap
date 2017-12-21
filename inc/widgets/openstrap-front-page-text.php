@@ -21,7 +21,7 @@ class openstrap_frontpage_text_widget extends WP_Widget {
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-front-page-text' );
 
 			/* Create the widget. */
-			$this->WP_Widget( 'widget-front-page-text', __('(Openstrap) Front Page Text', 'openstrap'), $widget_ops, $control_ops );		
+			parent::__construct( 'widget-front-page-text', __('(Openstrap) Front Page Text', 'openstrap'), $widget_ops, $control_ops );		
 		
         }
 		

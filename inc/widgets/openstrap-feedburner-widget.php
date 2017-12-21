@@ -21,7 +21,7 @@ class openstrap_feedburner_subscription_widget extends WP_Widget {
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-feedburner' );
 
 			/* Create the widget. */
-			$this->WP_Widget( 'widget-feedburner', __('(Openstrap) Feedburner','openstrap'), $widget_ops, $control_ops );					
+			parent::__construct( 'widget-feedburner', __('(Openstrap) Feedburner','openstrap'), $widget_ops, $control_ops );					
         }
 		
 		/* Get Default values of fields. */

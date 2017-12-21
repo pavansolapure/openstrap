@@ -1,4 +1,4 @@
-Openstrap 2.0.1
+Openstrap 2.0.2
 ===============
 The Openstrap theme for WordPress developed on top of 
 Twitter Bootstrap Framework. The theme is fully responsive and can 
@@ -53,6 +53,10 @@ Assets used in this theme and their license
 
 *** Revision History ***
 ===========================
+version 2.0.2		2017-12-21
+* Update Options Framework CSS
+* Updated Paypal Donation Form
+
 version 2.0.1		2017-09-29
 * Added updated Paypay Donation Button
 

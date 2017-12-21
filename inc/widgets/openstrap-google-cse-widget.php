@@ -21,7 +21,7 @@ class openstrap_googlecse_widget extends WP_Widget {
 			$control_ops = array( 'width' => 300, 'height' => 350, 'id_base' => 'widget-google-cse' );
 
 			/* Create the widget. */
-			$this->WP_Widget( 'widget-google-cse', __('(Openstrap) Google Custom Search', 'openstrap'), $widget_ops, $control_ops );		
+			parent::__construct( 'widget-google-cse', __('(Openstrap) Google Custom Search', 'openstrap'), $widget_ops, $control_ops );		
 		
         }
 

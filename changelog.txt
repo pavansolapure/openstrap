@@ -1,5 +1,9 @@
 *** Revision History ***
 ===========================
+version 2.0.2		2017-12-21
+* Update Options Framework CSS
+* Updated Paypal Donation Form
+
 version 2.0.1		2017-09-29
 * Fixed Paypal Donation Button
 
