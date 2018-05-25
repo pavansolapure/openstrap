@@ -15,13 +15,17 @@
 get_header(); ?>
 
 <?php
+/*
  if(is_front_page()) {
+	 
 	if(is_page_template( 'page-templates/front-page-2.php' )) {
 		get_template_part( 'page-templates/front', 'page' );
 	} else {
 		get_template_part( 'page-templates/front', 'page-2' );
 	}	
+	
  } else {
+	 */
 ?> 
 
 <?php 
@@ -67,4 +71,4 @@ get_header(); ?>
 	}
 ?>
 <?php get_footer(); ?>
-<?php } ?>
+<?php /*}*/ ?>
